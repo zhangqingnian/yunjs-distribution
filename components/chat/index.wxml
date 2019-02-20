@@ -1,0 +1,5 @@
+<!--components/chat/index.wxml-->
+<view class='chat'>
+    <image src='/images/kefu.png'></image>
+    <button class='contact' open-type='contact'></button>
+</view>

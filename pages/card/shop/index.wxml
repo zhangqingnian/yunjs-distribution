@@ -1,0 +1,47 @@
+<!--pages/card/shop/index.wxml-->
+<view class='contain'>
+    <view class='nav flex_row'>
+        <view class='on'>全部(99)</view>
+        <view>店铺内(99)</view>
+        <view>店铺外(99)</view>
+    </view>
+    <view class='list'>
+        <view class='item'>
+            <view class='itemTop'>
+                <view class='imgWarp'>
+                    <image class='img'></image>
+                    <view class='imgBottom flex_row'>
+                        <view class='priceWarp flex_row'>
+                            <view class='nowPrice'>￥2166</view>
+                            <view class='oldPrice'>￥2666</view>
+                        </view>
+                        <view class='status'>热销中</view>
+                    </view>
+                    <!-- <view class='coupon'>劵￥26</view> -->
+                    <image class='recom' src='/images/recom.png'></image>
+                </view>
+            </view>
+            <view class='itemBottom'>
+                <view class='itemBottomTop flex_row'>
+                    <view>
+                        <view class='cardName'>游泳健身月卡</view>
+                        <view class='venueName'>全民健身中心</view>
+                    </view>
+                    <view class='revise'>修改</view>
+                </view>
+                <view class='flex_row th'>
+                    <view>位置：9号</view>
+                    <view class='price'>佣金：￥400</view>
+                </view>
+                <view class='flex_row th'>
+                    <view>优惠券：¥59.00</view>
+                    <view>分销价格：未设定</view>
+                </view>
+                <view class='flex_row'>
+                    <image class='icon' src='/images/star-off.png'></image>
+                    <view>未入店铺</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

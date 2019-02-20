@@ -1,0 +1,4 @@
+<!--pages/webviwe/index.wxml-->
+<view class='warp'>
+    <image src='{{imgUrl + item.activityImg}}' mode='widthFix'></image>
+</view>

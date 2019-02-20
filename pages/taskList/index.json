@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "任务列表",
+    "usingComponents": {
+        "v-chat": "/components/chat/index"
+    }
+}

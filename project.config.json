@@ -1,0 +1,152 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.3",
+	"appid": "wx02adff5e9fd1148d",
+	"projectname": "%E5%88%86%E9%94%80%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "任务列表",
+					"pathName": "pages/taskList/index",
+					"query": "id=9"
+				},
+				{
+					"id": 1,
+					"name": "馆卡详情",
+					"pathName": "pages/venueCard/index",
+					"query": "id=43"
+				},
+				{
+					"id": 2,
+					"name": "课程详情",
+					"pathName": "pages/venueCourse/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "名片",
+					"pathName": "pages/card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "授权",
+					"pathName": "pages/authorize/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "绑定",
+					"pathName": "pages/bindMobile/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的店铺",
+					"pathName": "pages/card/shop/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品修改",
+					"pathName": "pages/card/shop/reviseGoods/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改名片",
+					"pathName": "pages/card/reviseCard/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人资料",
+					"pathName": "pages/my/reviseInfo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现记录",
+					"pathName": "pages/my/cashRecord/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现申请",
+					"pathName": "pages/my/cashApply/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团队",
+					"pathName": "pages/team/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团队成员",
+					"pathName": "pages/team/teamDetail/index",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "团队成员订单",
+					"pathName": "pages/team/oderList/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团队成员订单详情",
+					"pathName": "pages/team/oderList/oderDetail/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

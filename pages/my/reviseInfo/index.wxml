@@ -1,0 +1,59 @@
+<!--pages/my/reviseInfo/index.wxml-->
+<view class='containner'>
+    <view class='baseInfo'>
+        <view class='top'>
+            <view class='flex_row between'>
+            <view>基本信息</view>
+            <view class='status'>审核中</view>
+            </view>
+            <view class='fontSize24'>您填写的联系人姓名、身份证每个月仅可修改一次</view>
+        </view>
+        <view class='list'>
+            <view class='item flex_row'>
+                <view class='name'>真实姓名</view>
+                <input class='input' placeholder='请输入你的姓名'></input>
+            </view>
+            <view class='item flex_row'>
+                <view class='name'>身份证号</view>
+                <input class='input' placeholder='请输入你的身份证号码'></input>
+            </view>
+            <view class='item flex_row'>
+                <view class='name'>手机号码</view>
+                <input class='input' placeholder='请输入你的手机号码'></input>
+            </view>
+            <view class='item flex_row'>
+                <view class='name'>联系邮箱</view>
+                <input class='input' placeholder='请填写邮箱地址'></input>
+            </view>
+            <view class='item flex_row'>
+                <view class='name flex_column'>
+                    <text>收款账户</text><text class='fontSize20'>绑定微信</text>
+                </view>
+                <input class='input' placeholder='请输入收款账户'></input>
+            </view>
+        </view>
+    </view>
+    <view class='qualification baseInfo'>
+        <view class='top'>
+            <view class='heading'>资质信息</view>
+            <view class='fontSize24'>
+                请您分别上传身份证人像面、国徽面。请务必参考实例，不清晰的图片将无法通过审核，影响您的提现申请。
+            </view>
+            <view class='fontSize24 flex_row between'>
+                <view>图片要求：图像清晰，不模糊，大小不超过5M。</view>
+                <view class='example' bindtap='onExample'>示例</view>
+            </view>
+        </view>
+    </view>
+
+    <view class='upload flex_row'>
+        <image class='add'></image>
+        <view>请上传身份证人像面</view>
+    </view>
+
+    <view class='upload flex_row'>
+        <image class='add'></image>
+        <view>请上传身份证国徽面</view>
+    </view>
+    <view class='submit'>提交修改</view>
+</view>

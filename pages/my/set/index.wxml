@@ -1,0 +1,12 @@
+<!--pages/my/set/index.wxml-->
+<view class='containner'>
+    <view class='list'>
+        <view>使用说明</view>
+        <view>清理缓存(34.98M)</view>
+        <view>关于斤斗云健身分销小程序</view>
+        <view>营销协议</view>
+        <view>关注斤斗云健身公众号</view>
+    </view>
+
+    <view class='submit'>退出登录</view>
+</view>

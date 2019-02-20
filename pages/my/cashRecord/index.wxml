@@ -1,0 +1,90 @@
+<!--pages/my/cashRecord/index.wxml-->
+<view class='containner'>
+    <view class='fixed'>
+        <view class='total flex_row between'>
+            <view>累计提现¥6000.00</view>
+            <view>累计缴税¥6000.00</view>
+        </view>
+        <view class='header'>
+            <text class='w200'>日期</text>
+            <text class='w140'>提现\n状态</text>
+            <text class='w210'>个人所得税\n提现手续费</text>
+            <text class='w200'>账号信息</text>
+        </view>
+    </view>
+    <view class='list'>
+        <view class='list-item'>
+            <view class='w200 flex_column'>
+                <view>08:30:28</view>
+                <view>2018/12/09</view>
+            </view>
+            <view class='w140 flex_column'>
+                <view>¥800.00</view>
+                <view class='flex_row'>审核中<image bindtap='onWhy' 
+                    class='why' src='/images/why.png'></image></view>
+            </view>
+            <view class='w210 flex_column'>
+                <view>¥800.00</view>
+                <view class='red'>¥80.00</view>
+            </view>
+            <view class='w200 flex_column'>
+                <view>微信</view>
+                <view>18271897646</view>
+            </view>
+        </view>
+        <view class='list-item'>
+            <view class='w200 flex_column'>
+                <view>08:30:28</view>
+                <view>2018/12/09</view>
+            </view>
+            <view class='w140 flex_column'>
+                <view>¥800.00</view>
+                <view class='flex_row'>审核中 <image class='why' src='/images/why.png'></image></view>
+            </view>
+            <view class='w210 flex_column'>
+                <view>¥800.00</view>
+                <view class='red'>¥80.00</view>
+            </view>
+            <view class='w200 flex_column'>
+                <view>微信</view>
+                <view>18271897646</view>
+            </view>
+        </view>
+        <view class='list-item'>
+            <view class='w200 flex_column'>
+                <view>08:30:28</view>
+                <view>2018/12/09</view>
+            </view>
+            <view class='w140 flex_column'>
+                <view>¥800.00</view>
+                <view class='flex_row'>审核中 <image class='why' src='/images/why.png'></image></view>
+            </view>
+            <view class='w210 flex_column'>
+                <view>¥800.00</view>
+                <view class='red'>¥80.00</view>
+            </view>
+            <view class='w200 flex_column'>
+                <view>微信</view>
+                <view>18271897646</view>
+            </view>
+        </view>
+        <view class='list-item'>
+            <view class='w200 flex_column'>
+                <view>08:30:28</view>
+                <view>2018/12/09</view>
+            </view>
+            <view class='w140 flex_column'>
+                <view>¥800.00</view>
+                <view class='flex_row'>审核中</view>
+            </view>
+            <view class='w210 flex_column'>
+                <view>¥800.00</view>
+                <view class='red'>¥80.00</view>
+            </view>
+            <view class='w200 flex_column'>
+                <view>微信</view>
+                <view>18271897646</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/my/bank/addBank/index.wxml-->
+<view class='containner'>
+    <view class='list'>
+        <view class='flex_row'>
+            <view>银行名称</view>
+            <input placeholder='请选择银行'></input>
+        </view>
+        <view class='flex_row'>
+            <view>银行卡号</view>
+            <input placeholder='请输入银行卡号'></input>
+        </view>
+        <view class='flex_row'>
+            <view>真实姓名</view>
+            <input placeholder='读取真实姓名(不可修改)'></input>
+        </view>
+    </view>
+    <view class='submit'>确定</view>
+</view>

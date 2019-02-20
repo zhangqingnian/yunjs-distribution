@@ -1,0 +1,73 @@
+{
+    "pages": [
+        "pages/authorizeLocation/index",
+        "pages/authorize/index",
+        "pages/index/index",
+        "pages/my/index",
+        "pages/team/index",
+        "pages/card/index",
+        "pages/taskList/index",
+        "pages/venueCard/index",
+        "pages/venueCourse/index",
+        "pages/index/detail/index",
+        "pages/cityList/index",
+        "pages/webviwe/index",
+        "pages/bindMobile/index",
+        "pages/card/shop/index",
+        "pages/card/shop/reviseGoods/index",
+        "pages/card/reviseCard/index",
+        "pages/my/reviseInfo/index",
+        "pages/my/reviseInfo/eg/index",
+        "pages/my/code/index",
+        "pages/my/set/index",
+        "pages/my/bank/index",
+        "pages/my/bank/addBank/index",
+        "pages/my/cashRecord/index",
+        "pages/my/cashApply/index",
+        "pages/my/cashApply/rule/index",
+        "pages/team/teamDetail/index",
+        "pages/team/oderList/index",
+        "pages/team/oderList/oderDetail/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "white",
+        "navigationBarBackgroundColor": "#63AFE0"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/tabBar/index-off.png",
+                "selectedIconPath": "images/tabBar/index-on.png"
+            },
+            {
+                "pagePath": "pages/card/index",
+                "text": "名片",
+                "iconPath": "images/tabBar/card-off.png",
+                "selectedIconPath": "images/tabBar/card-on.png"
+            },
+            {
+                "pagePath": "pages/team/index",
+                "text": "团队",
+                "iconPath": "images/tabBar/team-off.png",
+                "selectedIconPath": "images/tabBar/team-on.png"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "text": "我的",
+                "iconPath": "images/tabBar/my-off.png",
+                "selectedIconPath": "images/tabBar/my-on.png"
+            }
+        ],
+        "color": "#969696",
+        "selectedColor": "#63AFE0"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    }
+}

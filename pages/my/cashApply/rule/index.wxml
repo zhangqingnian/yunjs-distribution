@@ -1,0 +1,13 @@
+<!--pages/my/cashApply/rule/index.wxml-->
+<view class='containner flex_column'>
+    <view class='title'>提现规则</view>
+    <view class='content'>
+        <view>1、提现具体时间为每个工作日的9：00-17：00；</view>
+        <view>2、提现金额为100元起，微信提现累积上限为5000元，累积超过5000元请使用银行卡提现；</view>
+        <view>3、每月提现总金额累积至5000元后，仅可再提现一次；</view>
+        <view>4、提现到账时间为1-3个工作日；</view>
+        <view>5、不支持信用卡提现；</view>
+        <view>6、每月根据提现总金额的不同收取相应的个人劳务所得税，具体根据国家税务局相关规定扣除；</view>
+        <view>7、提现时有疑问请联系平台客服人员，电话021-50170666。</view>
+    </view>
+</view>

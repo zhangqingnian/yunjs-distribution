@@ -1,0 +1,85 @@
+/* pages/team/oderList/index.wxss */
+.containner{
+    padding-top: 266rpx;
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #f5f5f5;
+}
+.member{
+    padding: 0 30rpx;
+    height: 130rpx;
+    background: #fff;
+    margin: 30rpx 0 20rpx 0;
+}
+.leve{
+    width: 45rpx;
+    height: 40rpx;
+}
+
+.avatar{
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.font28{
+    font-size: 28rpx;
+}
+
+.font32{
+    font-size: 32rpx;
+}
+
+.btn {
+    color:#fff;
+    width:140rpx;
+    height:50rpx;
+    background:rgba(99,175,224,1);
+    border-radius:20rpx;
+    text-align:center;
+    line-height:50rpx;
+    font-size: 24rpx;
+}
+
+
+.nav{
+    padding: 0 30rpx;
+    padding-top: 15rpx;
+    background: #fff;
+    align-items: flex-start;
+}
+
+.item{
+    background: #fff;
+    padding: 0 30rpx;
+    margin-bottom: 30rpx;
+}
+.item:first-child{
+    margin-top: 10rpx;
+}
+.item .top{
+   padding: 30rpx 0;
+   border-bottom: 1px solid #DCDCDC;
+}
+
+.img{
+    width: 250rpx;
+    height: 150rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+    background: #999;
+}
+
+.text{
+    width: calc(100% - 280rpx);
+    height: 150rpx;
+    font-size: 24rpx;
+    justify-content: space-between;
+}
+
+.bottom{
+    height: 68rpx;
+    font-size: 28rpx;
+}

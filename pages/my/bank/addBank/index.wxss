@@ -1,0 +1,11 @@
+/* pages/my/bank/addBank/index.wxss */
+.list{
+    background: #fff;
+    padding: 0 30rpx;
+}
+input{
+    width: 550rpx;
+    height: 80rpx;
+    text-align: right;
+}
+

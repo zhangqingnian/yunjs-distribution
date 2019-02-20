@@ -1,0 +1,17 @@
+/* pages/team/teamDetail/index.wxss */
+@import '../index.wxss';
+
+.leve{
+    width: 45rpx;
+    height: 40rpx;
+    margin-right: 25rpx;
+}
+
+.item{
+    padding:0;
+    height: 128rpx;
+}
+
+.font28{
+    font-size: 28rpx;
+}

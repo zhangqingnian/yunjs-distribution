@@ -1,0 +1,5 @@
+<!--pages/my/reviseInfo/eg/index.wxml-->
+<view class='containner flex_column'>
+    <image class='IDcard' src='/images/my/face.png'></image>
+    <image class='IDcard' src='/images/my/opposite.png'></image>
+</view>

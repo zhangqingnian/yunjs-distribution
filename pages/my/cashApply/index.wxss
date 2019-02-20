@@ -1,0 +1,38 @@
+/* pages/my/cashApply/index.wxss */
+
+.tip{
+    font-size: 22rpx;
+    padding: 25rpx 30rpx;
+}
+
+.form{
+    background: #fff;
+    padding: 0 30rpx;
+    font-size: 28rpx;
+}
+
+.form .flex_row{
+    padding: 25rpx 0;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+input{
+    width: 550rpx;
+    text-align: right;
+}
+
+.btn{
+    margin-top: 50rpx;
+    height: 100rpx;
+    background: #63E08C;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 100rpx;
+    color: #fff;
+}
+
+.rule{
+    text-align: center;
+    font-size: 24rpx;
+    margin-top: 30rpx;
+}

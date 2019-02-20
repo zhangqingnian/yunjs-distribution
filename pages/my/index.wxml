@@ -1,0 +1,101 @@
+<!--pages/my/index.wxml-->
+<view class='containner'>
+    <view class='personalInfo flex_row'>
+        <view class='left flex_row'>
+            <image class='avatar' src='/images/my/avatar.png'></image>
+            <view class='left-r flex_column'>
+                <view class='nickNameWarp flex_row'>
+                    <view class='nickName white'>老司机</view>
+                    <view class="revisePersonal" 
+                        bindtap='onSkip' data-name='修改个人资料'>修改个人资料</view>
+                </view>
+                <view class='statusWarp flex_row'>
+                    <view class='white'>状态：</view>
+                    <view class='status red '>审核中</view>
+                </view>
+            </view>
+        </view>
+        <view class="rigth">
+            <image src='/images/my/code.png' bindtap='onSkip' data-name='二维码'></image>
+            <image src='/images/my/set.png' 
+                style='margin: 0 30rpx 0 50rpx;' bindtap='onSkip' data-name='设置'></image>
+        </view>
+    </view>
+
+    <view class='money'>
+        <view class='top'>
+            <view class='title flex_row between'>
+                <view>可提佣金</view>
+                <view class='flex_row' bindtap='onSkip' data-name='提现记录'>
+                    <view class='record'>提现记录</view>
+                    <image class='arrow' src='/images/my/arrow.png'></image>
+                </view>
+            </view>
+            <view class='cash flex_row between'>
+                <view>￥
+                    <text class='red fontSize48'>2999.00</text>
+                </view>
+                <view class='btn' bindtap='onSkip' data-name='提现'>提现</view>
+            </view>
+        </view>
+        <view class='line'></view>
+        <view class='bottom'>
+            <view>佣金收益</view>
+            <view class='moneyStatus flex_row between'>
+                <view class='flex_column'>
+                    <text class='val'>￥19999.00</text>
+                    <text class='name'>已结算</text>
+                </view>
+                <view class='flex_column'>
+                    <text class='val'>￥1000.00</text>
+                    <text class='name'>结算中</text>
+                </view>
+                <view class='flex_column'>
+                    <text class='val'>￥1000.00</text>
+                    <text class='name'>已提现</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="order">
+        <view class='title flex_row between'>
+            <view>佣金订单</view>
+            <view class='flex_row' bindtap='onOrder' data-id='{{0}}'>
+                <view class='record'>全部订单</view>
+                <image class='arrow' src='/images/my/arrow.png'></image>
+            </view>
+        </view>
+        <view class='orderType flex_row between'>
+            <view class='flex_column' wx:for="{{orderType}}" wx:key="idx" 
+                data-id='{{item.id}}'
+                bindtap='onOrder'>
+                <image src='{{item.src}}'></image>
+                <view class='name flex_column'>
+                    <text>{{item.name}}</text>
+                    <text class='fontSize20'>{{item.msg}}</text>
+                </view>
+            </view>
+            
+        </view>
+    </view>
+
+    <view class='list'>
+        <view class='flex_row between item' bindtap='onSkip' data-name='我的任务'>
+            <view>我的任务(122)</view>
+            <image class='arrow' src='/images/my/arrow.png'></image>
+        </view>
+        <view class='flex_row between item' bindtap='onSkip' data-name='分析商品管理'>
+            <view>分销商品管理(113)</view>
+            <image class='arrow' src='/images/my/arrow.png'></image>
+        </view>
+        <view class='flex_row between item' bindtap='onSkip' data-name='银行卡'>
+            <view>我的银行卡</view>
+            <image class='arrow' src='/images/my/arrow.png'></image>
+        </view>
+        <view class='flex_row between item' bindtap='onSkip' data-name='公众号'>
+            <view>关注公众号</view>
+            <image class='arrow' src='/images/my/arrow.png'></image>
+        </view>
+    </view>
+</view>

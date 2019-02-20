@@ -1,0 +1,6 @@
+{   
+    "navigationBarTitleText":"斤斗云精选",
+    "usingComponents":{
+        "v-chat":"/components/chat/index"
+    }
+}

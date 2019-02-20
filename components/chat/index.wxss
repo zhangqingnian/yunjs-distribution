@@ -1,0 +1,24 @@
+/* components/chat/index.wxss */
+.chat{
+    width: 125rpx;
+    height: 125rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.chat image{
+    width: 125rpx;
+    height: 125rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.contact{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border-radius: 50%;
+    opacity: 0;
+}

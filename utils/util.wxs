@@ -1,0 +1,20 @@
+var filterDistance = function (val) {
+    return val < 1000 ? val + 'm' : (val / 1000).toFixed(1) + 'km'
+}
+
+var packageStatus = function(num){
+    switch(num){
+        case 1 : 
+            return '已结束';
+        case 2:
+            return '未开始';
+        case 3:
+            return '正在开始';
+        case 0:
+            return '暂停执行';            
+    }
+} 
+module.exports = {
+    filterDistance: filterDistance,
+    packageStatus: packageStatus
+}

@@ -1,0 +1,64 @@
+/* pages/my/bank/index.wxss */
+.containner{
+    align-items: center;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.bankCard{
+    width:690rpx;
+    height:200rpx;
+    background:linear-gradient(45deg,rgba(93,136,195,1),rgba(54,103,170,1));
+    box-shadow:3rpx 0px 6rpx 0px rgba(7,0,2,0.42);
+    border-radius:10rpx;
+    margin-bottom: 15rpx;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+
+.bankCard:first-child{
+    margin-top: 30rpx;
+}
+
+
+
+.select{
+    width: 45rpx;
+    height: 45rpx;
+}
+.bankLogo{
+    width: 60rpx;
+    height: 60rpx;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+
+.account{
+    font-size: 36rpx;
+}
+
+.bottom{
+    margin-top: 40rpx;
+    justify-content: flex-end;
+}
+
+.bottom .select{
+    margin-left: 40rpx;
+}
+
+.addbtn{
+    width:690rpx;
+    height:127rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:3rpx 0px 6rpx 0px rgba(7,0,2,0.42);
+    border-radius:10rpx;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30rpx;
+}
+
+.addBank{
+    color: #323232;
+}

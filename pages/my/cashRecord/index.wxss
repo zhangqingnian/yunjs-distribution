@@ -1,0 +1,58 @@
+/* pages/my/cashRecord/index.wxss */
+.containner{
+    padding-top: 178rpx;
+}
+.fixed{
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+.total{
+    color: #63AFE0;
+    padding: 20rpx 30rpx;
+    font-size: 28rpx;
+    box-sizing: border-box;
+}
+
+.header{
+    display: table;
+    background: #DCDCDC;
+    padding: 10rpx 0;
+}
+
+.header text,.list-item .flex_column{
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
+}
+.w200{
+    width: 200rpx;
+}
+.w140{
+    width: 140rpx;
+}
+.w210{
+    width: 210rpx;
+}
+
+.list-item:nth-child(odd){
+    background: #fff;
+}
+
+.list-item .flex_column{
+    font-size: 24rpx;
+    padding: 10rpx 0;
+}
+
+.list-item .flex_column .flex_row{
+    justify-content: center;
+}
+
+.why{
+    width: 45rpx;
+    height: 45rpx;
+}
+
+
+
+

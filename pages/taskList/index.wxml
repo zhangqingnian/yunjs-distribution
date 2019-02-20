@@ -1,0 +1,63 @@
+<!--pages/taskList/index.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
+<view class='container'>
+    <view class='imgwarp'>
+        <image src='{{imgUrl + task.commodityPackageImg}}'></image>
+        <view class='status'>{{util.packageStatus(task.packageStatus)}}</view>
+    </view>
+
+    <view class='info'>
+        <view class='top flex_row'>
+            <view class='leftwarp flex_row'>
+                <view class='venueName'>{{task.venueName}}</view>
+                <view class='distance'>{{util.filterDistance(task.distance)}}</view>
+            </view>
+            <view class='btn' bindtap='onUse' wx:if="{{task.received != 1}}">领用</view>
+            <view class='btn active' wx:if="{{task.received == 1}}">已领用</view>
+        </view>
+        <view class='info_bottom flex_row'>
+            <view class='info_title'>{{task.packageName}}</view>
+            <view class='share-warp'>
+                <image class='share-img' src='/images/share.png'></image>
+                <button class='share-btn' open-type='share'></button>
+            </view>
+        </view>
+    </view>
+
+    <view class='list flex_row'>
+        <view class='item' wx:for="{{task.goodsDetailVoList}}" wx:key="{{item.id}}"
+            bindtap='onGodetail' data-item='{{item}}'>
+            <view class='itemImg'>
+                <image src='{{imgUrl + item.fileName}}'></image>
+                <view class='itemBottom flex_row'>
+                    <view>￥{{item.goodsPrice}}</view>
+                    <view>{{item.status}}</view>
+                </view>
+            </view>
+            <view class='news'>
+                <view wx:if="{{task.packageType == 1}}" class='box flex_row'>
+                    <view>出售价:￥{{item.basePrice}}</view>
+                    <view class='price'>佣金:￥{{item.commissionPrice}}</view>
+                </view>
+                <view wx:if="{{task.packageType == 1}}">最低售价:￥{{item.salePrice }}</view>
+                <view class='cardName'>{{item.goodsName}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<view class='mask' wx:if="{{show}}">
+    <view class='box'>
+        <view class='top flex_cloumn'>
+            <view class='title'>请输入任务接取码</view>
+            <input class='couponInput' 
+                bindinput='onInput'
+                placeholder='请输入任务接取码' focus='true'></input>
+        </view>
+        <view class='bottom flex_row'>
+            <view bindtap='cancelExchange' >取消</view>
+            <view bindtap='confirmExchange'>兑换</view>
+        </view>
+    </view>
+</view>

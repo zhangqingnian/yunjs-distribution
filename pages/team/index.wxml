@@ -1,0 +1,22 @@
+<!--pages/team/index.wxml-->
+<view class='containner flex_column'>
+    <view class='title'>任务团队(5个)</view>
+    <view class='list'>
+        <view class='item flex_row'>
+            <image class='avatar' src='/images/avatar.png'></image>
+            <view>黄元宗的团队</view>
+        </view>
+        <view class='item flex_row'>
+            <image class='avatar' src='/images/avatar.png'></image>
+            <view>黄元宗的团队</view>
+        </view>
+        <view class='item flex_row'>
+            <image class='avatar' src='/images/avatar.png'></image>
+            <view>黄元宗的团队</view>
+        </view>
+        <view class='item flex_row'>
+            <image class='avatar' src='/images/avatar.png'></image>
+            <view>黄元宗的团队</view>
+        </view>
+    </view>
+</view>

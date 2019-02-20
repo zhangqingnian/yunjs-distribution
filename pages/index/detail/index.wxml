@@ -1,0 +1,2 @@
+<!--pages/index/detail/index.wxml-->
+<button bindtap='onGoBack'>test</button>

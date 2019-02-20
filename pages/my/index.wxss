@@ -1,0 +1,148 @@
+/* pages/my/index.wxss */
+page{
+    width: 100%;
+    height: 100%;
+}
+.white{
+    color: #ffffff;
+}
+.red{
+    color: #DA0808;
+}
+.fontSize48{
+    font-size: 48rpx;
+}
+.fontSize24{
+    font-size: 24rpx;
+}
+.fontSize20{
+    font-size: 20rpx;
+}
+.between{
+    justify-content: space-between;
+}
+.containner{
+    width: 100%;
+    min-height: 100%;
+    background: #F5F5F5;
+    color: #323232;
+    font-size: 30rpx;
+}
+
+
+/* ----- */
+.personalInfo {
+    background: #63AFE0;
+    height: 190rpx;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 0 30rpx;
+    justify-content: space-between;
+}
+.revisePersonal{
+    color: #55ABE4;
+    font-size: 26rpx;
+    background: #fff;
+    padding: 10rpx;
+    border-radius: 40rpx;
+    margin-left: 20rpx;
+}
+.avatar{
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 30rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.personalInfo .rigth image{
+    width: 44rpx;
+    height: 44rpx;
+}
+/* ------ */
+.money{
+    width:690rpx;
+    height:350rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:2rpx 0px 5rpx 0px rgba(7,0,2,0.42);
+    border-radius:20rpx;
+    margin: 0 auto;
+    margin-top: -40rpx;
+    box-sizing: border-box;
+    padding: 20rpx 30rpx;
+}
+
+.arrow{
+    display: block;
+    width: 16rpx;
+    height: 28rpx;
+}
+.record{
+    font-size: 24rpx;
+    margin-right: 20rpx;
+}
+.cash{
+   margin-top: 20rpx;
+}
+.btn{
+    font-size: 24rpx;
+    color: #fff;
+    width:140rpx;
+    height:50rpx;
+    background:rgba(99,175,224,1);
+    border-radius:20rpx;
+    text-align: center;
+    line-height: 50rpx;
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: #DCDCDC;
+    margin: 20rpx 0;
+}
+.moneyStatus{
+    margin-top: 20rpx;
+}
+.moneyStatus .val{
+    color: #55ABE4;
+}
+
+.moneyStatus .name{
+   text-align: center;
+}
+
+/* -------- */
+.order{
+    background: #fff;
+    padding: 20rpx 30rpx;
+    margin-top: 30rpx;
+}
+.orderType{
+    margin-top: 25rpx;
+    align-items: flex-start;
+}
+.orderType image{
+    width: 52rpx;
+    height: 52rpx;
+    display: inline-block;
+}
+
+.orderType .flex_column{
+    align-items: center;
+}
+
+/* ---------- */
+.list{
+    background: #fff;
+    margin-top: 30rpx;
+    padding: 0 30rpx;
+}
+
+.list .item{
+    border-bottom: 1px solid #DCDCDC;
+    padding: 20rpx 0;
+}
+
+.list .item:last-child{
+    border-bottom: none;
+}

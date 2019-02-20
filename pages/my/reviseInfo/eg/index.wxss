@@ -1,0 +1,10 @@
+/* pages/my/reviseInfo/eg/index.wxss */
+.IDcard{
+    width: 440rpx;
+    height: 288rpx;
+    margin-top: 150rpx;
+}
+
+.containner{
+    align-items: center;
+}

@@ -1,0 +1,122 @@
+<!--index.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
+<view class="container">
+    <!-- 位置 -->
+    <view class='index-top'>
+        <view class='area flex_row' bindtap='onSelectCity'>
+            <view>{{city}}</view>
+            <view class='arrow'></view>
+        </view>
+        <view class='search flex_row' bindtap='onSeacrhVenue'>
+            <image class='searchImg' src='/images/search.png'></image>
+            <view class='searchText'>请输入您要搜索的场馆</view>
+        </view>
+    </view>
+    <swiper class='banner' indicator-dots="true" autoplay="true" 
+        indicator-color="#ffffff" indicator-active-color="#2EE66B">
+        <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}"
+            bindtap='goWebview' data-item="{{item}}">
+            <image src="{{imgUrl+item.headImg}}"></image>
+        </swiper-item>
+    </swiper>
+
+    <view class='nav'>
+        <view class='{{item.isOn ? "on":""}}' wx:for="{{typeList}}"
+        wx:key="{{item.recommendType}}" 
+        data-item='{{item}}'
+        bindtap='onSelectType'>{{item.typeName}}</view>
+    </view>
+
+    
+    <scroll-view class='list' scroll-y='true' bindscrolltolower="onLoadMore">
+        <view class='item flex_row' wx:for="{{list}}" wx:key="{{item.id}}"
+            bindtap='onTaskList' data-item='{{item}}'>
+            <view class='left'>
+                <image class='fileimg' src='{{imgUrl + item.commodityPackageImg}}' ></image>
+                <view class='bottomTitle flex_row'>
+                    <view class='status'>{{util.packageStatus(item.packageStatus)}}</view>
+                    <view class='money'>佣金￥{{item.maxCommission}}</view>
+                </view>
+            </view>
+            <view class='right flex_column'>
+                <view class='top flex_row'>
+                    <view class='venueName'>{{item.venueName}}</view>
+                    <view class='address'>{{item.city}}</view>
+                    <image class='share' src='/images/share.png'></image>
+                </view>
+                <view class='name'>{{item.packageName}}</view>
+                <view class='bottom flex_row'>
+                    <view class='time'>{{item.effectTime}}</view>
+                    <view class='distance'>{{util.filterDistance(item.distance)}}</view>
+                </view>
+            </view>
+        </view>
+        <!-- <view class='item flex_row'>
+            <view class='left'>
+                <image class='fileimg'></image>
+                <view class='bottomTitle flex_row'>
+                    <view class='status'>招募中</view>
+                    <view class='money'>佣金￥289</view>
+                </view>
+            </view>
+            <view class='right flex_column'>
+                <view class='top flex_row'>
+                    <view class='venueName'>全民健身中心</view>
+                    <view class='address'>宁波</view>
+                    <image class='share' src='/images/share.png'></image>
+                </view>
+                <view class='name'>一对一健身小班瘦腿收腹练习打破亚健康状态(任务名)</view>
+                <view class='bottom flex_row'>
+                    <view class='time'>2018/10/25至2018/11/23</view>
+                    <view class='distance'>132米</view>
+                </view>
+            </view>
+        </view>
+        <view class='item flex_row'>
+            <view class='left'>
+                <image class='fileimg'></image>
+                <view class='bottomTitle flex_row'>
+                    <view class='status'>招募中</view>
+                    <view class='money'>佣金￥289</view>
+                </view>
+            </view>
+            <view class='right flex_column'>
+                <view class='top flex_row'>
+                    <view class='venueName'>全民健身中心</view>
+                    <view class='address'>宁波</view>
+                    <image class='share' src='/images/share.png'></image>
+                </view>
+                <view class='name'>一对一健身小班瘦腿收腹练习打破亚健康状态(任务名)</view>
+                <view class='bottom flex_row'>
+                    <view class='time'>2018/10/25至2018/11/23</view>
+                    <view class='distance'>132米</view>
+                </view>
+            </view>
+        </view>
+        <view class='item flex_row'>
+            <view class='left'>
+                <image class='fileimg'></image>
+                <view class='bottomTitle flex_row'>
+                    <view class='status'>招募中</view>
+                    <view class='money'>佣金￥289</view>
+                </view>
+            </view>
+            <view class='right flex_column'>
+                <view class='top flex_row'>
+                    <view class='venueName'>全民健身中心</view>
+                    <view class='address'>宁波</view>
+                    <image class='share' src='/images/share.png'></image>
+                </view>
+                <view class='name'>一对一健身小班瘦腿收腹练习打破亚健康状态(任务名)</view>
+                <view class='bottom flex_row'>
+                    <view class='time'>2018/10/25至2018/11/23</view>
+                    <view class='distance'>132米</view>
+                </view>
+            </view>
+        </view> -->
+    </scroll-view>
+
+
+</view>
+
+<v-chat class="chatBtn" />

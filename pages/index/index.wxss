@@ -1,0 +1,154 @@
+/**index.wxss**/
+page{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: #F5F5F5;
+}
+
+.index-top {
+    height: 100rpx;
+    padding: 0rpx 20rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #63afe0;
+    font-size: 32rpx;
+}
+
+.area {
+    width: 150rpx;
+    color: #fff;
+}
+
+.arrow {
+    width: 8px;
+    height: 8px;
+    border-top: 2rpx solid #fff;
+    border-right: 2rpx solid #fff;
+    transform: rotate(135deg);
+    margin-left:10rpx;
+
+}
+.search{
+    background: #fff;
+    height: 70rpx;
+    border-radius: 70rpx;
+    width: calc(100% - 160rpx);
+    align-items: center;
+    justify-content: center;
+}
+.searchImg{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+.searchText{
+    color: #999;
+    font-size: 28rpx;
+}
+
+
+
+.banner image{
+    width: 100%;
+    height: 300rpx;
+    background: rebeccapurple;
+}
+
+.nav{
+    display: flex;
+    background: #fff;
+    justify-content: space-around;
+}
+
+.nav view{
+    text-align: center;
+    color: #323232;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    height: 100rpx;
+    box-sizing: border-box;
+}
+
+.nav view.on{
+    color: #63AFE0;
+    border-bottom: 1px solid #63AFE0;
+}
+
+
+.list{
+    height: calc(100% - 500rpx);
+}
+.item{
+    background: #fff;
+    box-sizing: border-box;
+    padding: 30rpx;
+    margin-top: 30rpx;
+}
+
+.left{
+    width:250rpx;
+    height:150rpx;
+    border-radius:10rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.fileimg{
+    width:250rpx;
+    height:150rpx;
+    background: #ddd;
+}
+
+.bottomTitle{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    background:rgba(99,224,140,.5);
+    font-size: 22rpx;
+    color: #fff;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+}
+
+.right{
+    margin-left: 30rpx;
+    color: #323232;
+    font-size: 24rpx;
+    width: calc(100% - 280rpx);
+    justify-content: space-between;
+    height: 150rpx;
+}
+
+.top, .bottom{
+    justify-content: space-between;
+    align-items: center;
+}
+.venueName{
+    font-size: 32rpx;
+}
+.address{
+    
+}
+.share{
+    width: 32rpx;
+    height: 32rpx;
+}
+.bottom{
+    font-weight: 500;
+}
+
+
+.chatBtn{
+    position: fixed;
+    right: 30rpx;
+    bottom: 80rpx;
+}

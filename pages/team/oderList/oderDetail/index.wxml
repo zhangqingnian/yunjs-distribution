@@ -1,0 +1,86 @@
+<!--pages/team/oderList/oderDetail/index.wxml-->
+<view class='containner flex_column'>
+    <view class='item'>
+        <view class='top flex_column'>
+            <view class='flex_row warp'>
+                <image class='img'></image>
+                <view class='text flex_column'>
+                    <view class='goodsName font32'>至尊一卡通(游泳、羽毛球)</view>
+                    <view class='venueName'>全民健身馆</view>
+                    <view>订单号:78876544567887</view>
+                    <view class='flex_row between red'>
+                        <view>订单¥1000</view>
+                        <view>佣金¥1000</view>
+                    </view>
+                </view>
+            </view>
+            <view class='flex_column fontSize28'>
+                <view class='flex_row between'>
+                    <text class='wxName'>微信名</text>
+                    <text class='wxCode'>1888888888</text>
+                    <text>分销人佣金¥1000</text>
+                </view>
+                <view class='flex_row between'>
+                    <text class='wxName'>微信名(分销人)</text>
+                    <text class='wxCode'>1888888888</text>
+                    <text>分销人佣金¥1000</text>
+                </view>
+            </view>
+        </view>
+        <view class='bottom flex_row between'>
+            <text>2018/12/20创建</text>
+            <text space="nbsp">2018/12/20  12:39:10结算</text>
+        </view>
+    </view>
+
+    <view class='item'>
+        <view class='top colnTop' style='line-height: 50rpx;'>
+            <view class='flex_row between'>
+                <view>订单详情</view>
+                <view class='fontSize28'>微信支付</view>
+            </view>
+            <view class='flex_row between fontSize28'>
+                <view>下单时间：2018/12/20  9:28:20</view>
+                <view>已支付</view>
+            </view>
+        </view>
+        <view class='fontSize28 linkMan'>
+            <view>联系人：匿名(微信名)</view>
+            <view>手机号码：13389271939</view>
+        </view>
+        
+    </view>
+
+    <view class='item'>
+        <view class='top colnTop' style='line-height: 50rpx;'>
+            <view class='flex_row between'>
+                <view>订单信息</view>
+            </view>
+        </view>
+        <view class='fontSize28 linkMan'>
+            <view>全民健身馆</view>
+            <view>卡券名称：至尊一卡通(游泳、羽毛球健身通用)</view>
+            <view>场馆地址：北京东城区东方路1357号</view>
+        </view>
+    </view>
+
+    <view class='item'>
+        <view class='top colnTop' style='line-height: 50rpx;'>
+            <view class='flex_row between'>
+                <view>消费信息</view>
+            </view>
+        </view>
+        <view class='fontSize28 linkMan'>
+            <view>订单编号：7383578391838238</view>
+            <view class='flex_row between'>
+                <view>服务总价：¥800</view>
+                <view>剩余使用天数：25</view>
+            </view>
+            <view>有效期限：2018/12/01-2018/12/30</view>
+            <view class='flex_row between'>
+                <view>优惠券：¥20</view>
+                <view>实付款：¥20</view>
+            </view>
+        </view>
+    </view>
+</view>
