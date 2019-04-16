@@ -1,31 +1,35 @@
 <!--pages/venueCourse/index.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
 <view class='containner flex_column'>
     <view class='cardWarp'>
-        <image style='background:red'></image>
+        <image src="{{imgUrl + course.fileName}}"></image>
         <view class='cardWarptitle flex_row'>
-            <view>￥26000.00</view>
-            <view>热销中</view>
+            <view>￥{{course.price}}</view>
+            <view>{{course.status == 1 ? "报名中":"报名结束"}}</view>
         </view>
     </view>
 
     <view class='info'>
         <view class='top flex_row'>
             <view class='leftwarp flex_row'>
-                <view class='venueName'>全民健身中心</view>
-                <view class='distance'>132米</view>
+                <view class='venueName'>{{course.venueName}}</view>
+                <view class='distance'>{{util.filterDistance(course.distance)}}</view>
             </view>
-            <view class='btn'>佣金￥1000</view>
+            <view class='btn'>佣金￥{{course.maxCommission}}</view>
         </view>
         <view class='info_bottom flex_row'>
-            <view class='info_title'>一对一健身小班瘦腿收腹练习打破亚健康状态</view>
-            <image class='share' src='/images/share.png'></image>
+            <view class='info_title'>{{course.packageName}}</view>
+            <!-- <view class='share-warp'>
+                <image class='share-img' src='/images/share.png'></image>
+                <button class='share-btn' bindtap='onNavigateToMiniProgram'></button>
+            </view> -->
         </view>
     </view>
     
     <view class='category itemClass mtop30'>
         <view class='titleWarp flex_row'>
             <view class='title'>{{course.courseName}}</view>
-            <view class='type'>类型：{{course.sportType}}</view>
+            <view class='type'>{{course.sportType}}</view>
         </view>
         <view class='content flex_column'>
             <view class='item flex_row'>
@@ -43,7 +47,7 @@
             <view class='item hasAddress flex_row'>
                 <view class='flex_row'>
                     <view class='name'>地址：</view>
-                    <view class='value'>{{course.address}}</view>
+                    <view class='value' style='width:420rpx;'>{{course.address}}</view>
                 </view>
                 <view class='go flex_row' bindtap='onMap' 
                 data-name='{{course.venueName}}'
@@ -115,7 +119,7 @@
             <view class='type'></view>
         </view>
         <view class='content'>
-            全年场馆开放时间均可安排上课，请订购后与场馆联系，联系电话：0574-62797666
+            {{classes.classInstr}}
         </view>
     </view>
 
@@ -124,9 +128,9 @@
             <view class='title'>退款说明</view>
             <view class='type'></view>
         </view>
-        <view class='content'>
-            开课后，不可退款！
-        </view>
+        <text style='display:block;'>
+            {{course.refundInstr}}
+        </text>
     </view>
 
     <view class='explain itemClass mtop30'>
@@ -135,14 +139,32 @@
             <view class='type'></view>
         </view>
         <view class='content'>
-            增肌、减脂、拉伸、康复、体适能、物理治疗
+            {{course.courseDetail}}
         </view>
     </view>
 
-    <!-- <view class='baoming' bindtap='onGoSubmit'>报名</view> -->
     <view class='bottomwarp flex_row'>
-        <view class='confirm' bindtap='onGoSubmit'>
-            立即分享
+        <view class='confirm' bindtap='onUse' wx:if="{{options.entry == 1 && options.received != 1}}">立即领用</view>
+        <view class='confirm' bindtap='onGoShop' wx:if="{{options.entry == 1 && options.received == 1}}">我的店铺</view>
+        <view class='confirm' wx:if="{{options.entry != 1}}">
+            立即分享<button class='share-btn' bindtap='onNavigateToMiniProgram'></button>
+        </view>
+    </view>
+</view>
+
+
+<view class='mask' wx:if="{{show}}">
+    <view class='box'>
+        <view class='top flex_cloumn'>
+            <view class='title'>请输入任务接取码</view>
+            <view class='tip'>领用后至我的店铺修改属于你的分销价格</view>
+            <input class='couponInput' 
+                bindinput='onInput'
+                placeholder='请输入场馆提供的任务接取码' focus='true'></input>
+        </view>
+        <view class='bottom flex_row'>
+            <view bindtap='cancelExchange' >取消</view>
+            <view bindtap='confirmExchange'>确定</view>
         </view>
     </view>
 </view>

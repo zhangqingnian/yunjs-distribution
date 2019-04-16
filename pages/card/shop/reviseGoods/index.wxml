@@ -1,61 +1,109 @@
 <!--pages/card/shop/reviseGoods/index.wxml-->
+
+<wxs src="../../../../utils/util.wxs" module="util" />
 <view class='contain'>
     <view class='item'>
         <view class='itemTop'>
             <view class='imgWarp'>
-                <image class='img'></image>
+                <image class='img' src='{{imgUrl + item.fileName}}'></image>
                 <view class='imgBottom flex_row'>
                     <view class='priceWarp flex_row'>
-                        <view class='nowPrice'>￥2166</view>
-                        <view class='oldPrice'>￥2666</view>
+                        <view class='nowPrice'>￥{{salePrice}}</view>
+                        <view class='oldPrice'>￥{{item.goodsPrice}}</view>
                     </view>
-                    <view class='status'>热销中</view>
+                    <view class='status'>{{item.goodsStatus}}</view>
                 </view>
-                <!-- <view class='coupon'>劵￥26</view> -->
-                <image class='recom' src='/images/recom.png'></image>
+                <view class='coupon' wx:if="{{discountPrice > 0}}">劵￥{{discountPrice}}</view>
+                <image class='recom' wx:if="{{recommend}}" src='/images/recom.png'></image>
             </view>
+        </view>
+        <view class='itemBottom m25' style='padding-top:20rpx;'>
+            <view class='itemBottomTop flex_row bgf'>
+                <view>
+                    <view class='cardName'>{{item.goodsName}}</view>
+                    <view class='venueName'>
+                        {{item.venueName}} <text style='margin-left:60rpx;'>{{util.filterDistance(item.distance)}}</text>
+                    </view>
+                </view>
+                <view class='revise' bindtap='onGodetail'>查看详情</view>
+            </view>
+            <view class='flex_row bgf'>
+                <view class='nowPrice'>
+                销售价：￥{{salePrice}} </view>
+            <view class='oldPrice'>原价：￥{{item.goodsPrice}}</view>
+            </view>
+            <view class='flex_row'>
+                成本价：{{item.basePrice}}
+            </view>
+            <view class='flex_row sb'>
+                <view class='price'>销售可赚：￥{{commisionMoney}}</view>
+                <!--售价 - 分销价格 -->
+                <view class='price' wx:if="{{item.type == 1}}">分销可赚：￥{{taskPrice ? (taskPrice - item.basePrice) : 0 }}</view>
+            </view>
+            
+            <view class='flex_row sb'>
+                <view class='flex_row'>
+                <view>是否推荐</view>
+                <image class='switch' bindtap='onRecommend' 
+                    src='{{recommend ?"/images/on.png":"/images/off.png"}}' ></image>
+                </view>
+                <view class='flex_row'>
+                    <view>是否入店铺</view>
+                    <image class='switch' bindtap='onShop'
+                        src='{{shop  ?"/images/on.png":"/images/off.png"}}'></image>
+                </view>
+            </view>
+            
+            <view>任务结束时间：{{item.saleEndTimeStr}}</view>
+            
+            <view class='flex_row borderBottom p15 between'>
+                <view class='flex_row'> 
+                    <view>销售价格：</view>
+                    <input style="width:240rpx" type='number' 
+                        value='{{(salePrice)}}' 
+                        placeholder='默认最低可售价'
+                    bindblur='onSalePrice'></input>
+                </view>
+                <view class='flex_row'>
+                    <view class='btn-tip'>默认最低可售价{{item.miniSalePrice}}</view>
+                    <view class='revise'>修改</view>
+                </view>    
+                
+            </view>
+            <view class='flex_row borderBottom p15 between'>
+                <view class='flex_row'> 
+                    <view>优惠券：</view>
+                    <input style="width:250rpx" value='{{discountPrice}}' type='number' 
+                        placeholder='任性发券'
+                        bindblur='onDiscountPrice'></input>
+                </view>        
+                <view class='flex_row'> 
+                    <view class='btn-tip'>最大优惠金额{{salePrice - item.miniSalePrice}}</view>
+                    <view class='revise'>修改</view>
+                </view> 
+            </view>
+            
         </view>
         <view class='itemBottom'>
-            <view class='itemBottomTop flex_row'>
-                <view>
-                    <view class='cardName'>游泳健身月卡</view>
-                    <view class='venueName'>
-                        全民健身中心 <text style='margin-left:60rpx;'>128米</text>
-                    </view>
-                </view>
-                <view class='revise'>查看详情</view>
+            <view class='flex_row borderBottom p15 between' wx:if="{{item.type == 1}}">
+                <view class='flex_row'> 
+                    <view>分销价格：</view>
+                    <input style="width:410rpx" value='{{taskPrice}}'
+                        placeholder='请填写给分销员的价格' type='number' bindblur='onTaskPrice'></input>
+                </view>    
+                <view class='revise'>修改</view>
             </view>
-            <view class='flex_row'>
-                <view class='nowPrice'>销售价：￥1500.00</view>
-                <view class='oldPrice'>原价：￥1500.00</view>
+            <view class='flex_row borderBottom p15 between'>
+                <view class='flex_row'> 
+                    <text space="emsp">排  序：</text>
+                    <input style="width:410rpx" value='{{sort == 999999999 ? "":sort}}' 
+                        placeholder='请填写商品在店铺中的排名' type='number' bindblur='onSort'></input>
+                </view>        
+                <view class='revise'>修改</view>
             </view>
-            <view class='price'>佣金：￥400.00</view>
-            <view class='flex_row'>
-                <view>是否推荐</view>
-                <image class='switch' src='/images/on.png'></image>
-            </view>
-            <view class='flex_row'>
-                <view>是否入店铺</view>
-                <image class='switch' src='/images/on.png'></image>
-            </view>
-            <view>任务结束时间：2018/12/31</view>
-            <view class='flex_row borderBottom'>
-                <view>优惠券：</view>
-                <input placeholder='0元'></input>
-            </view>
-            <view class='flex_row borderBottom'>
-                <view>销售价格：</view>
-                <input placeholder='默认最低价格+优惠券价格'></input>
-            </view>
-            <view class='flex_row borderBottom'>
-                <view>分销价格：</view>
-                <input placeholder='未设定'></input>
-            </view>
-            <view class='flex_row borderBottom'>
-                <text space="emsp">排  序：</text>
-                <input placeholder='请输入商品序号'></input>
-            </view>
+            <text class='tips'>说明：首次设定分销价格立即生效，二次修改第二天生效 
+                                 实际成交价格=销售价格-优惠券价格</text>
         </view>
     </view>
-    <view class='keep'>保存</view>
+    <view class='keep' bindtap='onKeep'>保存</view>
 </view>

@@ -1,0 +1,2 @@
+/* pages/my/bank/updataBank/index.wxss */
+@import '../addBank/index.wxss';

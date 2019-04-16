@@ -1,0 +1,45 @@
+/* pages/team/teamDetail/index.wxss */
+@import '../index.wxss';
+
+.leve{
+    width: 45rpx;
+    height: 40rpx;
+    margin-right: 25rpx;
+}
+
+.item{
+    padding:0;
+    height: 128rpx;
+}
+
+.font28{
+    font-size: 28rpx;
+}
+
+
+.titles {
+background:#fff;
+margin-top:40rpx;
+margin-bottom:30rpx;
+height:120rpx;
+padding: 0 30rpx;
+justify-content: space-between;
+font-size: 28rpx;
+}
+
+.fw{
+    font-weight:bold;
+font-size:30rpx;
+
+}
+
+.revise{
+    font-size: 24rpx;
+    color: #fff;
+    width:140rpx;
+    height:50rpx;
+    background:rgba(99,175,224,1);
+    border-radius:20rpx;
+    text-align: center;
+    line-height: 50rpx;
+}

@@ -1,12 +1,14 @@
 /* pages/team/index.wxss */
-.title{
-    font-weight: bold;
-    padding-left: 30rpx;
-    background: #fff;
+.top{
+     background: #fff;
     margin-top: 40rpx;
     margin-bottom: 30rpx;
     height: 100rpx;
-    line-height: 100rpx;
+    padding: 0 30rpx;
+}
+
+.title{
+    font-weight: bold;
 }
 
 .list{
@@ -21,4 +23,16 @@
     width: 60rpx;
     height: 60rpx;
     margin-right: 30rpx;
+    border-radius:50%;
+}
+
+.revise{
+    font-size: 24rpx;
+    color: #fff;
+    width:140rpx;
+    height:50rpx;
+    background:rgba(99,175,224,1);
+    border-radius:20rpx;
+    text-align: center;
+    line-height: 50rpx;
 }

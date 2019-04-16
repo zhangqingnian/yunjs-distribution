@@ -76,14 +76,12 @@ page{
     height: 32rpx;
 }
 
-.cardWarp .bottom .bottomItem{
-    margin-bottom: 15rpx;
-}
-.cardWarp .bottom .bottomItem:last-child{
-    margin-bottom: 0rpx;
+.cardWarp .bottom .bottomItem input{
+    width: 100%;
 }
 
 .cardWarp .bottom .val{
+    width: 100%;
     font-size: 30rpx;
     margin-left: 20rpx;
 }

@@ -1,39 +1,26 @@
 <!--pages/my/bank/index.wxml-->
 <view class='containner flex_column'>
-    <view class='bankCard'>
+    <view class='bankCard' wx:if="{{bankList.length}}" wx:for="{{bankList}}" wx:key="{{item.id}}">
         <view class='top flex_row between'>
             <view class='left flex_row'>
                 <image class='bankLogo'></image>
                 <view class='flex_column'>
-                    <view class='bankName'>交通银行</view>
-                    <view class='user'>张小龙</view>
+                    <view class='bankName'>{{item.bankName}}</view>
+                    <view class='user'>{{item.realName}}</view>
                 </view>
             </view>
-            <image class='select' src='/images/bank/off.png'></image>
+            <image class='select' bindtap='onDefault' data-item='{{item}}'
+                src='{{item.defaultChoice ? "/images/bank/on.png" :"/images/bank/off.png"}}'></image>
         </view>
         <view class='bottom flex_row'>
-            <text class='account' space='emsp'>**** **** **** 8888</text>
-            <image class='select' src='/images/bank/revise.png'></image>
-            <image class='select' src='/images/bank/del.png'></image>
+            <text class='account' space='emsp'>{{item.bankNum}}</text>
+            <image class='select' bindtap='onUpdata' data-item='{{item}}' 
+                src='/images/bank/revise.png'></image>
+            <image class='select' bindtap='onRemove' data-id='{{item.id}}' 
+                src='/images/bank/del.png'></image>
         </view>
     </view>
-    <view class='bankCard'>
-        <view class='top flex_row between'>
-            <view class='left flex_row'>
-                <image class='bankLogo'></image>
-                <view class='flex_column'>
-                    <view class='bankName'>交通银行</view>
-                    <view class='user'>张小龙</view>
-                </view>
-            </view>
-            <image class='select' src='/images/bank/off.png'></image>
-        </view>
-        <view class='bottom flex_row'>
-            <text class='account' space='emsp'>**** **** **** 8888</text>
-            <image class='select' src='/images/bank/revise.png'></image>
-            <image class='select' src='/images/bank/del.png'></image>
-        </view>
-    </view>
+    <view class='tip'  wx:if="{{!bankList.length}}">您还没有添加过银行卡!</view>
     <view class='addbtn flex_column' bindtap='onAddBank'>
         <image class='select' src='/images/bank/add.png'></image>
         <view class='addBank'>添加新的银行卡</view>

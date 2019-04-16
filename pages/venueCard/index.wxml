@@ -1,56 +1,65 @@
 <!--pages/venueCard/index.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
 <view class='containner flex_column'>
     <view class='cardWarp'>
-        <image style='background:red'></image>
+        <image class='img' src='{{imgUrl + card.fileName}}'></image>
+        <view class='coupon' wx:if="{{card.discountPrice > 0}}">劵￥{{card.discountPrice}}</view>
+        <image class='recom' wx:if="{{card.recommend}}" src='/images/recom.png'></image>
         <view class='cardWarptitle flex_row'>
-            <view>￥26000.00</view>
-            <view>热销中</view>
+            <view class='flex_row'>
+                <view wx:if="{{card.salePrice}}">￥{{card.salePrice}}</view> 
+                <view class='{{card.salePrice ? "del":""}}'>￥{{card.buyMoney}}</view>
+            </view>
+            <view>{{card.status == 1 ? "销售中":"销售结束"}}</view>
         </view>
     </view>
 
     <view class='info'>
         <view class='top flex_row'>
             <view class='leftwarp flex_row'>
-                <view class='venueName'>全民健身中心</view>
-                <view class='distance'>132米</view>
+                <view class='venueName'>{{card.venueName}}</view>
+                <view class='distance'>{{util.filterDistance(card.distance)}}</view>
             </view>
-            <view class='btn'>佣金￥1000</view>
+            <view class='btn' wx:if="{{card.maxCommission}}">佣金￥{{card.maxCommission}}</view>
         </view>
         <view class='info_bottom flex_row'>
-            <view class='info_title'>一对一健身小班瘦腿收腹练习打破亚健康状态</view>
-            <view class='share-warp'>
+            <view class='info_title'>{{card.packageName}}</view>
+            <!-- <view class='share-warp'>
                 <image class='share-img' src='/images/share.png'></image>
-                <button class='share-btn' open-type='share'></button>
-            </view>
+                <button class='share-btn' bindtap='onNavigateToMiniProgram'></button>
+            </view> -->
         </view>
     </view>
 
     <view class='category itemClass mtop30'>
         <view class='titleWarp flex_row'>
-            <view class='title'>一次通月卡</view>
-            <view class='type' >类型：羽毛球</view>
+            <view class='title'>{{card.cardName}}</view>
+            <view class='type' wx:if="{{card.sportName}}">{{card.sportName}}</view>
         </view>
         <view class='content flex_column'>
             <view class='item flex_row'>
                 <view class='name'>馆卡价格：</view>
-                <view class='value price'>¥88</view>
+                <view class='value price flex_row'>
+                    <view wx:if="{{card.salePrice}}">￥{{card.salePrice}}</view> 
+                    <view class='{{card.salePrice ? "del":""}}'>￥{{card.buyMoney}}</view>
+                </view>
             </view>
             <view class='item flex_row'>
-                <view class='name'>馆卡次数：</view>
-                <view class='value'>30次</view>
+                <view class='name'>馆卡价值：</view>
+                <view class='value'>{{util.cardStatus(card)}}</view>
             </view>
             <view class='item flex_row'>
                 <view class='name'>有效时间：</view>
-                <view class='value'>365天</view>
+                <view class='value'>{{util.cardTime(card)}}</view>
             </view>
             <view class='item flex_row'>
                 <view class='name'>场馆名称：</view>
-                <view class='value'>全民健身中心</view>
+                <view class='value'>{{card.venueName}}</view>
             </view>
             <view class='item hasAddress flex_row'>
                 <view class='flex_row'>
                     <view class='name'>地址：</view>
-                    <view class='value'>浙江省宁波市余姚市凯丰路199                                                                                </view>
+                    <view class='value' style='width:420rpx;'>{{card.address}}</view>
                 </view>
                 <view class='go flex_row' 
                 bindtap='onMap' 
@@ -94,18 +103,34 @@
             <view class='title'>购买须知</view>
             <view class='type'></view>
         </view>
-        <view class='content'>
-            认定为若无群若无群二群翁无群群翁群二
-        </view>
+        <text style='display:block;'>{{card.remark}}</text>
     </view>
 
 
 
     <!-- <view class='baoming' bindtap='onGoOrder'>购买馆卡</view> -->
     <view class='bottomwarp flex_row'>
-        
-        <view class='confirm' bindtap='onGoOrder'>
-            立即分享
+        <view class='confirm' bindtap='onUse' wx:if="{{options.entry == 1 && options.received != 1}}">立即领用</view>
+        <view class='confirm' bindtap='onGoShop' wx:if="{{options.entry == 1 && options.received == 1}}">我的店铺</view>
+        <view class='confirm' wx:if="{{options.entry != 1}}">
+            立即分享<button class='share-btn' bindtap='onNavigateToMiniProgram'></button>
+        </view>
+    </view>
+</view>
+
+
+<view class='mask' wx:if="{{show}}">
+    <view class='box'>
+        <view class='top flex_cloumn'>
+            <view class='title'>请输入任务接取码</view>
+            <view class='tip'>领用后至我的店铺修改属于你的分销价格</view>
+            <input class='couponInput' 
+                bindinput='onInput'
+                placeholder='请输入场馆提供的任务接取码' focus='true'></input>
+        </view>
+        <view class='bottom flex_row'>
+            <view bindtap='cancelExchange' >取消</view>
+            <view bindtap='confirmExchange'>确定</view>
         </view>
     </view>
 </view>

@@ -1,0 +1,19 @@
+<!--pages/addTeam/index.wxml-->
+<view class='mask'>
+    <view class='box'>
+        <view class='top flex_row'>
+            <view class='topwarp '>
+                <view class='text'>加入团队？</view>
+                <view class='flex_row xieyiwarp'>
+                    <image class='hook' bindtap='onSelect' src='{{isOn ? on : off}}'></image>
+                    <view class='xieyi'>阅读并同意《营销协议》</view>
+                </view>
+            </view>
+            
+        </view>
+        <view class='btns flex_row'>
+            <view catchtap='onConfirm'>确定</view>
+            <view catchtap='onCancel'>取消</view>
+        </view>
+    </view>
+</view>

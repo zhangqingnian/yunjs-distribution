@@ -2,7 +2,7 @@
 <wxs src="../../utils/util.wxs" module="util" />
 <view class='container'>
     <view class='imgwarp'>
-        <image src='{{imgUrl + task.commodityPackageImg}}'></image>
+        <image src='{{imgUrl + task.commodityPackageImg}}' mode='aspectFit'></image>
         <view class='status'>{{util.packageStatus(task.packageStatus)}}</view>
     </view>
 
@@ -51,13 +51,14 @@
     <view class='box'>
         <view class='top flex_cloumn'>
             <view class='title'>请输入任务接取码</view>
+            <view class='tip'>领用后至我的店铺修改属于你的分销价格</view>
             <input class='couponInput' 
                 bindinput='onInput'
-                placeholder='请输入任务接取码' focus='true'></input>
+                placeholder='请输入场馆提供的任务接取码' focus='true'></input>
         </view>
         <view class='bottom flex_row'>
             <view bindtap='cancelExchange' >取消</view>
-            <view bindtap='confirmExchange'>兑换</view>
+            <view bindtap='confirmExchange'>确定</view>
         </view>
     </view>
 </view>

@@ -1,0 +1,39 @@
+<!--pages/my/task/index.wxml-->
+<wxs src="../../../utils/util.wxs" module="util" />
+<view class='container flex_column'>
+    <view class='nav flex_row'>
+        <view class='{{item.isOn ? "on":""}}' wx:for="{{nav}}" wx:key="idx" bindtap='onNav' data-item='{{item}}'>{{item.name}}</view>
+    </view>
+
+    <view class='list'>
+        <view class='item flex_column' wx:for="{{taskList}}" wx:key="{{item.id}}">
+            <view class='flex_row item-top'>
+                <view class='left'>
+                    <image class='fileimg' src='{{imgUrl + item.commodityPackageImg}}'></image>
+                    <view class='bottomTitle flex_row'>
+                        <view class='status'>{{util.packageStatus(item.packageStatus)}}</view>
+                        <view class='money'>佣金￥{{item.maxCommission}}</view>
+                    </view>
+                </view>
+                <view class='right flex_column'>
+                    <view class='top flex_row'>
+                        <view class='venueName'>{{item.venueName}}</view>
+                        <view class='address'>{{item.city}}</view>
+                        <!-- <image class='share' src='/images/share.png'></image> -->
+                    </view>
+                    <view class='name'>{{item.packageName}}</view>
+                    <view class='bottom flex_row'>
+                        <view class='time'>{{item.effectTime}}</view>
+                        <view class='distance'>{{util.filterDistance(item.distance)}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='flex_row item-bottom'>
+                <view class='red'>业绩：{{item.achievement}}</view>
+                <view class='btn' catchtap='onyeji' data-item='{{item}}'>业绩详情</view>
+            </view>
+        </view>
+    </view>
+
+
+</view>

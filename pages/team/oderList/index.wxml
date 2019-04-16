@@ -1,31 +1,48 @@
 <!--pages/team/oderList/index.wxml-->
-<view class='containner flex_column'>
+<view class='containner flex_column {{saleUser.saleOrTeam != 1 ? "p90":""}}'>
     <view class='fixed'>
-        <view class='member flex_row between'>
+        <view class='member flex_row between' wx:if="{{saleUser.saleOrTeam == 1}}">
             <image class='leve' src='/images/0.png'></image>
-            <image class='avatar' src='/images/avatar.png'></image>
+            <image class='avatar' src='{{imgUrl + saleUser.iconUrl}}'></image>
             <view class='flex_column'>
-                <view>黄袁总</view>
-                <view class='font28'>1888888888</view>
+                <view>{{saleUser.nickName}}</view>
+                <view class='font28'>{{saleUser.mobile}}</view>
             </view>
             <view class='flex_column font28'>
-                <view>订单999笔</view>
-                <view>佣金9999.00</view>
+                <view>订单{{saleUser.saleOrderCount}}笔</view>
+                <view>佣金{{saleUser.saleOrderAllComMoney}}</view>
             </view>
-            <view class='btn'>删除</view>
+            <view class='btn' bindtap='onDel' wx:if="{{saleUser.status  == 0 && saleUser.saleOrTeam != 1}}">删除</view>
+            <view class='btn' wx:if="{{saleUser.status  != 0}}">已退</view>
         </view>
         <view class='nav flex_row between'>
-            <view>全部</view>
-            <view>未支付</view>
-            <view>已结算</view>
-            <view class='flex_column'>
-                <view>已支付</view>
-                <view class='fontSize24'>(结算中)</view>
+            <view class='flex_column {{item.isOn ? "on":""}}' catchtap='onNav' data-item='{{item}}' wx:for="{{nav}}" wx:key="{{item.id}}">
+                <view>{{item.name}}</view>
+                <view class='fontSize24' wx:if="{{item.msg}}">({{item.msg}})</view>
             </view>
-            <view>已失效</view>
         </view>
     </view>
     <view class='list flex_column'>
+        <view class='item' wx:for="{{orderList}}" wx:key="{{item.id}}" 
+            catchtap='onDeatil' data-item='{{item}}'>
+            <view class='top flex_row'>
+                <image class='img' src='{{imgUrl + item.orderImg}}'></image>
+                <view class='text flex_column'>
+                    <view class='goodsName font30'>{{ item.courseName || item.cardName}}</view>
+                    <view class='venueName'>{{item.venueName}}</view>
+                    <view class='font19'>订单号:{{item.orderCode}}</view>
+                    <view class='flex_row between red'>
+                        <view>订单¥{{item.payment}}</view>
+                        <view>佣金¥{{item.saleComMoney}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='bottom flex_row between'>
+                <text>{{item.orderCreateTimeStr}}创建</text>
+                <text space="nbsp">{{item.orderStatus == 0 ? "结算中":item.veriFiceTimeStr+"结算"}}</text>
+            </view>
+        </view>
+        <!--         
         <view class='item'>
             <view class='top flex_row'>
                 <image class='img'></image>
@@ -43,96 +60,6 @@
                 <text>2018/12/20创建</text>
                 <text space="nbsp">2018/12/20  12:39:10结算</text>
             </view>
-        </view>
-        <view class='item'>
-            <view class='top flex_row'>
-                <image class='img'></image>
-                <view class='text flex_column'>
-                    <view class='goodsName font32'>至尊一卡通(游泳、羽毛球)</view>
-                    <view class='venueName'>全民健身馆</view>
-                    <view>订单号:78876544567887</view>
-                    <view class='flex_row between red'>
-                        <view>订单¥1000</view>
-                        <view>佣金¥1000</view>
-                    </view>
-                </view>
-            </view>
-            <view class='bottom flex_row between'>
-                <text>2018/12/20创建</text>
-                <text space="nbsp">2018/12/20  12:39:10结算</text>
-            </view>
-        </view>
-        <view class='item'>
-            <view class='top flex_row'>
-                <image class='img'></image>
-                <view class='text flex_column'>
-                    <view class='goodsName font32'>至尊一卡通(游泳、羽毛球)</view>
-                    <view class='venueName'>全民健身馆</view>
-                    <view>订单号:78876544567887</view>
-                    <view class='flex_row between red'>
-                        <view>订单¥1000</view>
-                        <view>佣金¥1000</view>
-                    </view>
-                </view>
-            </view>
-            <view class='bottom flex_row between'>
-                <text>2018/12/20创建</text>
-                <text space="nbsp">2018/12/20  12:39:10结算</text>
-            </view>
-        </view>
-        <view class='item'>
-            <view class='top flex_row'>
-                <image class='img'></image>
-                <view class='text flex_column'>
-                    <view class='goodsName font32'>至尊一卡通(游泳、羽毛球)</view>
-                    <view class='venueName'>全民健身馆</view>
-                    <view>订单号:78876544567887</view>
-                    <view class='flex_row between red'>
-                        <view>订单¥1000</view>
-                        <view>佣金¥1000</view>
-                    </view>
-                </view>
-            </view>
-            <view class='bottom flex_row between'>
-                <text>2018/12/20创建</text>
-                <text space="nbsp">2018/12/20  12:39:10结算</text>
-            </view>
-        </view>
-        <view class='item'>
-            <view class='top flex_row'>
-                <image class='img'></image>
-                <view class='text flex_column'>
-                    <view class='goodsName font32'>至尊一卡通(游泳、羽毛球)</view>
-                    <view class='venueName'>全民健身馆</view>
-                    <view>订单号:78876544567887</view>
-                    <view class='flex_row between red'>
-                        <view>订单¥1000</view>
-                        <view>佣金¥1000</view>
-                    </view>
-                </view>
-            </view>
-            <view class='bottom flex_row between'>
-                <text>2018/12/20创建</text>
-                <text space="nbsp">2018/12/20  12:39:10结算</text>
-            </view>
-        </view>
-        <view class='item'>
-            <view class='top flex_row'>
-                <image class='img'></image>
-                <view class='text flex_column'>
-                    <view class='goodsName font32'>至尊一卡通(游泳、羽毛球)</view>
-                    <view class='venueName'>全民健身馆</view>
-                    <view>订单号:78876544567887</view>
-                    <view class='flex_row between red'>
-                        <view>订单¥1000</view>
-                        <view>佣金¥1000</view>
-                    </view>
-                </view>
-            </view>
-            <view class='bottom flex_row between'>
-                <text>2018/12/20创建</text>
-                <text space="nbsp">2018/12/20  12:39:10结算</text>
-            </view>
-        </view>
+        </view> -->
     </view>
 </view>

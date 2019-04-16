@@ -41,6 +41,12 @@ page{
 .fontSize28{
     font-size: 28rpx;
 }
+.font19{
+    font-size: 19rpx;
+}
+.font30{
+    font-size: 30rpx;
+}
 .between{
     justify-content: space-between;
 }
@@ -71,7 +77,7 @@ page{
     position: relative;
 }
 .share-img{
-    width:32rpx;
+    width:100rpx;
     height:32rpx;
 }
 

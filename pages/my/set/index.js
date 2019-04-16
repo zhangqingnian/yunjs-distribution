@@ -5,62 +5,36 @@ Page({
      * 页面的初始数据
      */
     data: {
-        
+        arr: [{
+            name: '使用说明',
+            type: 0,
+            url:'./use/index'
+        }, {
+            name: '关于斤斗云健身分销小程序',
+            type: 1,
+            url:'./about/index'
+        }, {
+            name: '营销协议',
+            type: 2,
+            url:'./protocol/index'
+        }, {
+            name: '关注斤斗云公众号',
+            type: 3,
+            url:'./public/index'
+        }]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    onSelect(e){
+        let item = e.currentTarget.dataset.item;
+        wx.navigateTo({
+            url: item.url,
+        })
+       
     }
 })

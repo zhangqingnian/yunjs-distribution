@@ -2,17 +2,19 @@
 <view class='containner flex_column'>
     <view class='warp'>
         <view class='user flex_row'>
-            <image class='avatar' src='/images/my/avatar.png'></image>
-            <view>浮华年前的背后</view>
+            <image class='avatar' src='{{imgUrl + baseInfo.iconImg}}'></image>
+            <view>{{baseInfo.nickName}}</view>
         </view>
-        <view class='codewarp'>
-            <image class='code'></image>
+        <view class='codewarp' bindtap='_code'>
+            <image class='code' src='{{src}}'></image>
         </view>
-        <view class='tip'>面对面分享二维码</view>
+        <view class='tip'>识别太阳码加入团队</view>
+
+        <view class='keep' bindtap='onKeep'>保存图片到相册</view>
     </view>
 </view>
 
-<view class='mask'>
+<view class='mask' wx:if="{{isShow}}">
     <view class='box'>
         <view class='top flex_row'>
             <view class='topwarp '>

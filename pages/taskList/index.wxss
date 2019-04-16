@@ -19,7 +19,6 @@ page{
 .imgwarp image{
     width: 100%;
     height: 300rpx;
-    background: skyblue;
 }
 
 .imgwarp .status{
@@ -40,7 +39,7 @@ page{
 
 .info{
     background: #fff;
-    margin-top:30rpx;
+    /* margin-top:30rpx; */
     padding: 20rpx 30rpx;
 }
 .top,.leftwarp{
@@ -172,7 +171,7 @@ page{
 }
 
 .mask .box .top{
-    height: 180rpx;
+    height: 220rpx;
     border-bottom: 1px solid #eaeaea;
     box-sizing: border-box; 
 }
@@ -180,6 +179,11 @@ page{
     color: #4a4a4a;
     text-align: center;
     line-height: 80rpx;
+}
+
+.mask .box .tip{
+    font-size: 24rpx;
+    text-align: center;
 }
 
 .mask .box .couponInput{
@@ -190,6 +194,8 @@ page{
     border-radius: 5px;
     border: 1px solid #eaeaea;
     padding-left: 10rpx;
+    font-size:26rpx;
+
 }
 .mask .box .bottom{
     height: 80rpx;

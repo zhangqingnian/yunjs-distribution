@@ -1,31 +1,32 @@
 <!--pages/team/teamDetail/index.wxml-->
 <view class='containner flex_column'>
-    <view class='title'>任务团队(5个)</view>
+    <view class='flex_row between top'>
+        <view class='title'>团队成员({{total}}人)</view>
+        <view class='revise' bindtap='goShop'>分销商品</view>  
+    </view>
     <view class='list'>
-        <view class='item flex_row between'>
+        <view class='item flex_row between' wx:for="{{saleUserList}}" wx:key="{{item.id}}"
+            bindtap='onOrder' data-item='{{item}}'>
             <view class='left flex_row'>
-                <image class='leve' src='/images/0.png'></image>
-                <image class='avatar' src='/images/avatar.png'></image>
-                <view>黄元宗的团队</view>
+                <image class='leve' src='/images/{{index}}.png'></image>
+                <image class='avatar' src='{{imgUrl + item.iconUrl}}'></image>
+                <view>{{item.nickName}}</view>
             </view>
             <view class='right'>
-                <view>订单999笔</view>
+                <view>订单{{item.saleOrderCount}}笔</view>
             </view>
         </view>
-        <view class='item flex_row between'>
+        <!-- <view class='item flex_row between'>
             <view class='left flex_row'>
                 <image class='leve' src=''></image>
                 <image class='avatar' src='/images/avatar.png'></image>
                 <view class='flex_column'>
                     <view>黄元宗的团队</view>
-                    <view class='font28'>13878213682</view>
                 </view>
-                
             </view>
             <view class='right flex_column font28'>
                 <view>订单999笔</view>
-                <view>佣金999.00</view>
             </view>
-        </view>
+        </view> -->
     </view>
 </view>

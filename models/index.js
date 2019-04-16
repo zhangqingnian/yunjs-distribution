@@ -33,7 +33,7 @@ export class IndexModel extends Http {
         })
     }
 
-    //领取
+    //领取任务
     getTask(data){
         return this.request({
             url:'m/mini/task/saveTeamByCode',
@@ -43,19 +43,54 @@ export class IndexModel extends Http {
     }
 
     //馆卡详情
-    getCardsDetail(data) {
+    getCardsDetail(data, entry, received = 0) {
+        // let url = entry == 1 ? 'm/mini/venueGoods/front/getCardsDetail' :
+        //     'm/mini/venueGoods/getCardsDetail';
+
+        var url = '';
+        if (entry == 1) {
+            if (received == 1) {
+                url = 'm/mini/venueGoods/getCardsDetail';
+            } else {
+                url = 'm/mini/venueGoods/front/getCardsDetail';
+            }
+        } else {
+            url = 'm/mini/venueGoods/getCardsDetail';
+        }      
         return this.request({
-            url: 'm/mini/venueGoods/getCardsDetail',
+            url,
             data,
             method: 'POST'
         })
     }
     //课程详情
-    getCourseDetail(data) {
+    getCourseDetail(data, entry, received = 0) {
+        // let url = entry == 1 ? 'm/mini/venueGoods/front/getCourseDetail' :
+        //                         'm/mini/venueGoods/getCourseDetail';
+        var url = '';
+        if(entry == 1){
+            if (received == 1){
+                url = 'm/mini/venueGoods/getCourseDetail';
+            }else{
+                url = 'm/mini/venueGoods/front/getCourseDetail';
+            }
+        }else{
+            url = 'm/mini/venueGoods/getCourseDetail';
+        }                        
+        
         return this.request({
-            url: 'm/mini/venueGoods/getCourseDetail',
+            url,
             data,
             method: 'POST'
         })
     }
+
+    //课程详情 - 班级
+    getClass(id) {
+        return this.request({
+            url: 'm/crm/venueClass/front/venueClassDetail?classId=' + id,
+        })
+    }
+
+    
 }

@@ -1,0 +1,14 @@
+<!--pages/my/bank/updataBank/index.wxml-->
+<view class='containner'>
+    <view class='list'>
+        <view class='flex_row'>
+            <view>银行名称</view>
+            <input placeholder='请选择银行' value='{{bankName}}' bindinput='onBankName'></input>
+        </view>
+        <view class='flex_row'>
+            <view>银行卡号</view>
+            <input placeholder='请输入银行卡号' type='number' value='{{bankNum}}' bindinput='onBankNum'></input>
+        </view>
+    </view>
+    <view class='submit' bindtap='onSubmit'>确定</view>
+</view>

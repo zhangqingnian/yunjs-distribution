@@ -20,6 +20,7 @@ page{
     height: 100rpx;
     background: #fff;
     justify-content: space-around;
+    z-index:999;
 }
 .nav view{
     text-align: center;
@@ -34,21 +35,26 @@ page{
     border-bottom: 1px solid #63AFE0;
 }
 
+.item{
+    margin-bottom: 20rpx;
+    padding: 0 30rpx;
+    background: #fff;
+}
 .itemTop{
-    padding: 30rpx;
+    padding: 15rpx 0;
+    border-bottom: 1px solid #DCDCDC;
 }
 .itemTop .imgWarp{
     position: relative;
-    width:690rpx;
-    height:300rpx;
-    border-radius:20rpx;
+    width:250rpx;
+    height:150rpx;
+    border-radius:10rpx;
     overflow: hidden;
 }
 
 .itemTop .img{
-    width:690rpx;
-    height:300rpx;
-    background: #63AFE0;
+    width:250rpx;
+    height:150rpx;
 }
 
 .imgBottom{
@@ -65,18 +71,18 @@ page{
     padding: 0 20rpx;
 }
 .oldPrice{
-    margin-left: 30rpx;
+    margin-left: 10rpx;
     text-decoration: line-through;
 }
 
 .coupon{
     position: absolute;
-    left: 0;
-    top:20rpx;
+    right: 0;
+    top:10rpx;
     width:120rpx;
     height:40rpx;
     background:rgba(218,8,8,.5);
-    border-radius:0px 10rpx 10rpx 0px;
+    border-radius:10rpx 0rpx 0rpx 10rpx;
     color: #fff;
     font-size: 22rpx;
     line-height: 40rpx;
@@ -85,17 +91,32 @@ page{
 
 .recom{
     position: absolute;
-    left: 10rpx;
-    top:10rpx;
+    left: 0rpx;
+    top:0rpx;
     width:70rpx;
     height:70rpx;
 }
 
+.itemTop .right{
+    font-size: 24rpx;
+    width: calc(100% - 280rpx);
+    height: 150rpx;
+    margin-left: 30rpx;
+    justify-content: space-between
+}
+
+
+
+
+
+
+
 .itemBottom{
     background: #fff;
-    padding: 30rpx;
     font-size: 28rpx;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rpx 0;
 }
 
 .itemBottomTop{
@@ -104,8 +125,7 @@ page{
 }
 
 .cardName{
-    font-size: 30rpx;
-    font-weight: bold;
+    font-size: 32rpx;
 }
 
 .venueName{
@@ -128,7 +148,6 @@ page{
 
 .th{
     justify-content: space-between;
-    line-height: 45rpx;
 }
 
 .icon{

@@ -2,6 +2,9 @@
 .containner{
     padding-top: 266rpx;
 }
+.p90{
+    padding-top: 90rpx;
+}
 .fixed{
     position: fixed;
     width: 100%;
@@ -22,6 +25,7 @@
 .avatar{
     width: 60rpx;
     height: 60rpx;
+    border-radius: 50%;
 }
 
 .font28{
@@ -50,7 +54,9 @@
     background: #fff;
     align-items: flex-start;
 }
-
+.nav .on{
+    color: #63AFE0;
+}
 .item{
     background: #fff;
     padding: 0 30rpx;

@@ -1,0 +1,33 @@
+<!--pages/team/teamDetail/index.wxml-->
+<view class='containner flex_column'>
+    <view class='titles flex_row'>
+        <view class='left flex_column'>
+            <view class='fw'>我的团队({{total}}人)</view>
+            <view class='red'>业绩{{achievement}}  佣金{{totalMoney}}</view>
+        </view> 
+        <view class='revise' bindtap='goCode'>建立团队</view>  
+        <view class='left flex_column'>
+            <view>订单{{totalCount}}笔</view>
+            <view>佣金{{totalMoney}}</view>
+        </view>  
+    </view>
+    <view class='list'>
+        <view class='item flex_row between' wx:for="{{saleUserList}}" wx:key="{{item.id}}"
+            bindtap='onOrder' data-item='{{item}}'>
+            <view class='left flex_row'>
+                <image class='leve' src='/images/0.png'></image>
+                <image class='avatar' src='{{imgUrl + item.iconUrl}}'></image>
+                <view class='flex_column'>
+                    <view>{{item.nickName}}</view>
+                    <view class='font28'>{{item.mobile}}</view>
+                </view>
+                
+            </view>
+            <view class='right'>
+                <view>订单{{item.saleOrderCount}}笔</view>
+                <view>佣金{{item.saleOrderAllComMoney || 0 }}</view>
+            </view>
+        </view>
+        
+    </view>
+</view>

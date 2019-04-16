@@ -1,0 +1,36 @@
+<!--components/search/index.wxml-->
+<view class='container'>
+    <view class="header">
+        <view class='cancel' bindtap="onCancel">返回</view>
+        <view class="search-container">
+            <image class="icon" src="images/search.png" />
+            <input confirm-type='search' placeholder-class='in-bar' placeholder='场馆名称或任务' class='bar' bind:confirm="onConfirm" value="{{packageName}}" focus="true" />
+            <image bind:tap="onDelete" class="cancel-img" src="images/cancel.png" />
+        </view>
+        
+    </view>
+
+
+    <view class="books-container flex_column">
+        <view class='item flex_row' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='onTaskList' data-item='{{item}}'>
+            <view class='left'>
+                <image class='fileimg' src='{{imgUrl + item.commodityPackageImg}}'></image>
+                <view class='bottomTitle flex_row'>
+                    <view class='status'>{{util.packageStatus(item.packageStatus)}}</view>
+                    <view class='money'>{{item.packageType == 2 ? '指定' : '佣金￥'+ item.maxCommission}}</view>
+                </view>
+            </view>
+            <view class='right flex_column'>
+                <view class='top flex_row'>
+                    <view class='venueName'>{{item.venueName}}</view>
+                    <view class='address'>{{item.city}}</view>
+                </view>
+                <view class='name'>{{item.packageName}}</view>
+                <view class='bottom flex_row'>
+                    <view class='time'>{{item.effectTime}}</view>
+                    <view class='distance'>{{util.filterDistance(item.distance)}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,87 @@
+<!--pages/team/oderList/oderDetail/index.wxml-->
+<wxs src="../../../../utils/util.wxs" module="util" />
+<view class='containner flex_column'>
+    <view class='item'>
+        <view class='top flex_column'>
+            <view class='flex_row warp'>
+                <image class='img' src='{{imgUrl + order.orderImg}}'></image>
+                <view class='text flex_column'>
+                    <view class='goodsName font30'>{{order.orderName}}</view>
+                    <view class='venueName'>{{order.venueName}}</view>
+                    <view class='font19'>订单号:{{order.orderCode}}</view>
+                    <view class='flex_row between red'>
+                        <view>订单¥{{order.payment}}</view>
+                        <view>佣金¥{{order.sumCommisionMoney }}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='flex_column fontSize28'>
+                <view class='flex_row between' wx:if="{{order.teamOrSaleType == 1}}">
+                    <text class='wxName'>微信名</text>
+                    <text class='wxCode'>{{order.teamUserName}}</text>
+                    <text>分销人佣金¥{{order.teamCommissionMoney }}</text>
+                </view>
+                <view class='flex_row between'>
+                    <text class='wxName'>微信名(分销人)</text>
+                    <text class='wxCode'>{{order.saleUserName}}</text>
+                    <text>分销人佣金¥{{order.saleCommissionMoney }}</text>
+                </view>
+            </view>
+        </view>
+        <view class='bottom flex_row between'>
+            <text>{{order.orderCreateTimeStr}}创建</text>
+            <text space="nbsp">{{order.orderStatus == 0 ? "结算中":order.verificTimeStr+"结算"}}</text>
+        </view>
+    </view>
+
+    <view class='item'>
+        <view class='top colnTop' style='line-height: 50rpx;'>
+            <view class='flex_row between'>
+                <view>订单详情</view>
+                <view class='fontSize28'>{{order.payType ? "微信支付":"余额支付"}}</view>
+            </view>
+            <view class='flex_row between fontSize28'>
+                <view>下单时间：{{order.orderCreateTimeStr}}</view>
+                <view>{{util.payStatus(order.payStatus)}}</view>
+            </view>
+        </view>
+        <view class='fontSize28 linkMan'>
+            <view>联系人：{{order.linkName}}</view>
+            <view>手机号码：{{order.linkMobile}}</view>
+        </view>
+        
+    </view>
+
+    <view class='item'>
+        <view class='top colnTop' style='line-height: 50rpx;'>
+            <view class='flex_row between'>
+                <view>订单信息</view>
+            </view>
+        </view>
+        <view class='fontSize28 linkMan'>
+            <view>{{order.venueName}}</view>
+            <view>卡券名称：{{order.orderName}}</view>
+            <view>场馆地址：{{order.venueAddress}}</view>
+        </view>
+    </view>
+
+    <view class='item'>
+        <view class='top colnTop' style='line-height: 50rpx;'>
+            <view class='flex_row between'>
+                <view>消费信息</view>
+            </view>
+        </view>
+        <view class='fontSize28 linkMan'>
+            <view>订单编号：{{order.orderCode }}</view>
+            <view class='flex_row between'>
+                <view>服务总价：¥{{order.money}}</view>
+                <view>剩余使用天/次数：{{order.surplusTimes}}</view>
+            </view>
+            <view wx:if="{{order.orderType == 17}}">有效期限：{{order.endTimeCH}}</view>
+            <view class='flex_row between'>
+                <view>优惠券：¥{{order.couponMoney}}</view>
+                <view>实付款：¥{{order.actualMoney}}</view>
+            </view>
+        </view>
+    </view>
+</view>

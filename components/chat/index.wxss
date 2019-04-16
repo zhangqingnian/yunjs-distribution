@@ -1,14 +1,14 @@
 /* components/chat/index.wxss */
 .chat{
-    width: 125rpx;
-    height: 125rpx;
+    width: 90rpx;
+    height: 90rpx;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
 }
 .chat image{
-    width: 125rpx;
-    height: 125rpx;
+    width: 90rpx;
+    height: 90rpx;
     border-radius: 50%;
     overflow: hidden;
 }

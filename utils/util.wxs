@@ -14,7 +14,71 @@ var packageStatus = function(num){
             return '暂停执行';            
     }
 } 
+var cardStatus = function (obj) {
+    /*0, "次数卡"
+        1, "月卡"
+        2, "季卡"
+        3, "年卡"
+        4, "会员卡"
+        5, "学期课"
+        6, "自由卡"
+        7, "活动次数卡"
+        */
+    if (obj.type == 0 || obj.type == 7) {
+        return obj.times + '次'
+    } else if (obj.type == 1 || obj.type == 2 || obj.type == 3 || obj.type == 6) {
+        return obj.activeTime + '天'
+    } else if (obj.type == 4) {
+        return obj.money + '元'
+    }
+}
+var cardTime = function (obj) {
+    /*0, "次数卡"
+        1, "月卡"
+        2, "季卡"
+        3, "年卡"
+        4, "会员卡"
+        5, "学期课"
+        6, "自由卡"
+        7, "活动次数卡"
+        */
+    if (obj.type == 0 || obj.type == 7) {
+        return obj.activeTime + '天'
+    } else if (obj.type == 1 || obj.type == 2 || obj.type == 3 || obj.type == 6) {
+        return obj.activeTime + '天'
+    } else if (obj.type == 4) {
+        return obj.activeTime + '元'
+    }
+}
+
+var checkStatus =  function(num){
+    switch (num) {
+        case 1:
+            return '审核中';
+        case 2:
+            return '已实名';
+        case 3:
+            return '未实名';
+    }
+}
+
+var payStatus = function(num){
+    switch (num) {
+        case 0:
+            return '待支付';
+        case 1:
+            return '已支付';
+        case 2:
+            return '已退款';
+        case 3:
+            return '已失效';
+    }
+}
 module.exports = {
     filterDistance: filterDistance,
-    packageStatus: packageStatus
+    packageStatus: packageStatus,
+    cardTime: cardTime,
+    cardStatus: cardStatus,
+    checkStatus:checkStatus,
+    payStatus: payStatus
 }

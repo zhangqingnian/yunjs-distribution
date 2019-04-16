@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 25,
 			"list": [
 				{
 					"id": 0,
@@ -48,7 +48,7 @@
 					"id": 1,
 					"name": "馆卡详情",
 					"pathName": "pages/venueCard/index",
-					"query": "id=43"
+					"query": "packageId=9&id=43"
 				},
 				{
 					"id": 2,
@@ -57,16 +57,22 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "名片",
 					"pathName": "pages/card/index",
-					"query": ""
+					"query": "",
+					"scene": "1037",
+					"referrerInfo": {
+						"appId": "wx02adff5e9fd1148d",
+						"extraData": "{\"customerId\" : 2983}"
+					}
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "index",
 					"pathName": "pages/index/index",
-					"query": ""
+					"query": "",
+					"scene": "1001"
 				},
 				{
 					"id": -1,
@@ -138,13 +144,64 @@
 					"id": 16,
 					"name": "团队成员订单",
 					"pathName": "pages/team/oderList/index",
-					"query": ""
+					"query": "teamId=1&saleUserId=174"
 				},
 				{
 					"id": -1,
 					"name": "团队成员订单详情",
 					"pathName": "pages/team/oderList/oderDetail/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改名片",
+					"pathName": "pages/card/reviseCard/index",
+					"query": "packageId=9&id=43"
+				},
+				{
+					"id": -1,
+					"name": "修改个人信息",
+					"pathName": "pages/my/reviseInfo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/my/orderList/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "task",
+					"pathName": "pages/my/task/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11111111",
+					"pathName": "pages/my/cashApply/index",
+					"query": ""
+				},
+				{
+					"id": 23,
+					"name": "加入团队",
+					"pathName": "pages/addTeam/index",
+					"query": "scene=123",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/my/set/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "设置协议",
+					"pathName": "pages/my/set/protocol/index",
+					"query": "",
+					"scene": "1011"
 				}
 			]
 		}

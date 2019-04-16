@@ -1,54 +1,108 @@
 <!--pages/card/reviseCard/index.wxml-->
 <view class='containner flex_column'>
     <view class='warp'>
-        <image class='cardimg'></image>
+        <image class='cardimg' src='/images/gold.png'></image>
         <view class='cardWarp flex_column'>
             <view class='top flex_row'>
                 <view class='user flex_row'>
-                    <image class='avatar'></image>
-                    <view class='nickName'>浮华年前的背后</view>
+                    <image class='avatar' bindtap="onImg" src='{{img}}'></image>
+                    <view class='nickName'>
+                        <input value='{{userInfo.nickName}}' bindinput="onNickName"></input>
+                    </view>
                 </view>
-                <view class='revise'>修改</view>
+                <view class='revise' bindtap='onRevise' data-color='gold'>修改</view>
             </view>
             <view class='bottom '>
                 <view class='bottomItem flex_row'>
                     <image class='icon' src='/images/card/icon_iphone.png'></image>
-                    <view class='val'>1838888888</view>
+                    <view class='val'>
+                        <input value='{{userInfo.mobile}}' maxlength='11' bindinput="onMobile"></input>
+                    </view>
                 </view>
                 <view class='bottomItem flex_row'>
                     <image class='icon' src='/images/card/icon_email.png'></image>
-                    <view class='val'>18389328945@139.com</view>
+                    <view class='val'>
+                        <input value='{{userInfo.email ? userInfo.email : "无"}}' 
+                            bindinput="onEmail" ></input>
+                    </view>
                 </view>
                 <view class='bottomItem flex_row'>
                     <image class='icon' src='/images/card/icon_address.png'></image>
-                    <view class='val'>东方路1357号10楼1002室</view>
+                    <view class='val'>
+                        <input value='{{userInfo.address ? userInfo.address : "无"}}' bindinput="onAddress"></input>
+                    </view>
                 </view>
             </view>
         </view>
     </view>
 
     <view class='warp'>
-        <image class='cardimg'></image>
+        <image class='cardimg' src='/images/silver.png'></image>
         <view class='cardWarp flex_column'>
             <view class='top flex_row'>
                 <view class='user flex_row'>
-                    <image class='avatar'></image>
-                    <view class='nickName'>浮华年前的背后</view>
+                    <image class='avatar' bindtap="onImg" src='{{img}}'></image>
+                    <view class='nickName'>
+                        <input value='{{userInfo.nickName}}' bindinput="onNickName"></input>
+                    </view>
                 </view>
-                <view class='revise'>修改</view>
+                <view class='revise' bindtap='onRevise' data-color='silver'>修改</view>
             </view>
             <view class='bottom '>
                 <view class='bottomItem flex_row'>
                     <image class='icon' src='/images/card/icon_iphone.png'></image>
-                    <view class='val'>1838888888</view>
+                    <view class='val'>
+                        <input value='{{userInfo.mobile}}' maxlength='11' bindinput="onMobile"></input>
+                    </view>
                 </view>
                 <view class='bottomItem flex_row'>
                     <image class='icon' src='/images/card/icon_email.png'></image>
-                    <view class='val'>18389328945@139.com</view>
+                    <view class='val'>
+                        <input value='{{userInfo.email ? userInfo.email : "无"}}' 
+                            bindinput="onEmail" ></input>
+                    </view>
                 </view>
                 <view class='bottomItem flex_row'>
                     <image class='icon' src='/images/card/icon_address.png'></image>
-                    <view class='val'>东方路1357号10楼1002室</view>
+                    <view class='val'>
+                        <input value='{{userInfo.address ? userInfo.address : "无"}}' bindinput="onAddress"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='warp'>
+        <image class='cardimg' src='/images/black.png'></image>
+        <view class='cardWarp flex_column'>
+            <view class='top flex_row'>
+                <view class='user flex_row'>
+                    <image class='avatar' bindtap="onImg" src='{{img}}'></image>
+                    <view class='nickName'>
+                        <input value='{{userInfo.nickName}}' bindinput="onNickName"></input>
+                    </view>
+                </view>
+                <view class='revise' bindtap='onRevise' data-color='black'>修改</view>
+            </view>
+            <view class='bottom '>
+                <view class='bottomItem flex_row'>
+                    <image class='icon' src='/images/card/icon_iphone.png'></image>
+                    <view class='val'>
+                        <input value='{{userInfo.mobile}}' maxlength='11' bindinput="onMobile"></input>
+                    </view>
+                </view>
+                <view class='bottomItem flex_row'>
+                    <image class='icon' src='/images/card/icon_email.png'></image>
+                    <view class='val'>
+                        <input value='{{userInfo.email ? userInfo.email : "无"}}' 
+                            bindinput="onEmail" ></input>
+                    </view>
+                </view>
+                <view class='bottomItem flex_row'>
+                    <image class='icon' src='/images/card/icon_address.png'></image>
+                    <view class='val'>
+                        <input value='{{userInfo.address ? userInfo.address : "无"}}' bindinput="onAddress"></input>
+                    </view>
                 </view>
             </view>
         </view>

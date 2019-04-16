@@ -1,47 +1,40 @@
 <!--pages/card/shop/index.wxml-->
 <view class='contain'>
     <view class='nav flex_row'>
-        <view class='on'>全部(99)</view>
-        <view>店铺内(99)</view>
-        <view>店铺外(99)</view>
+        <view class='{{item.isOn ? "on":""}}' wx:for="{{nav}}" wx:key="idx" bindtap='onNav' data-item='{{item}}'>{{item.name}}</view>
     </view>
     <view class='list'>
-        <view class='item'>
-            <view class='itemTop'>
-                <view class='imgWarp'>
-                    <image class='img'></image>
-                    <view class='imgBottom flex_row'>
-                        <view class='priceWarp flex_row'>
-                            <view class='nowPrice'>￥2166</view>
-                            <view class='oldPrice'>￥2666</view>
-                        </view>
-                        <view class='status'>热销中</view>
+        <view class='item' wx:for="{{goods}}" wx:key="{{item.id}}">
+            <view class='itemTop flex_row'>
+                <view class='imgWarp left'>
+                    <image class='img' src='{{imgUrl + item.fileName}}'></image>
+                    <view class='coupon' wx:if="{{item.discountPrice > 0}}">
+                        劵￥{{item.discountPrice}}</view>
+                    <image class='recom' wx:if="{{item.recommend == 1}}" src='/images/recom.png'></image>
+                    
+                </view>
+                <view class='right flex_column'>
+                    <view class='cardName flex_row'>{{item.goodsName}}(<view class='nowPrice'>￥{{item.salePrice}}</view><view class='oldPrice price'>￥{{item.goodsPrice}}</view>)</view>
+                    <view class='flex_row th' >
+                        <view wx:if="{{!(item.sort == 999999999)}}">位置：{{item.sort}}号</view>
+                        <view class='price'>佣金：￥{{item.commisionMoney}}</view>
                     </view>
-                    <!-- <view class='coupon'>劵￥26</view> -->
-                    <image class='recom' src='/images/recom.png'></image>
+                    <view class='flex_row th'>
+                        <view>优惠券：¥{{item.discountPrice || 0}}</view>
+                        <view >成本价：{{item.basePrice}}</view>
+                    </view>
+                    <view class='flex_row'>
+                        <image class='icon' 
+                        src='{{item.shop == 1 ? "/images/star-on.png":"/images/star-off.png"}}'></image>
+                        <view>{{item.shop == 1 ? "已入店铺":"未入店铺"}}</view>
+                    </view>
                 </view>
             </view>
-            <view class='itemBottom'>
-                <view class='itemBottomTop flex_row'>
-                    <view>
-                        <view class='cardName'>游泳健身月卡</view>
-                        <view class='venueName'>全民健身中心</view>
-                    </view>
-                    <view class='revise'>修改</view>
-                </view>
-                <view class='flex_row th'>
-                    <view>位置：9号</view>
-                    <view class='price'>佣金：￥400</view>
-                </view>
-                <view class='flex_row th'>
-                    <view>优惠券：¥59.00</view>
-                    <view>分销价格：未设定</view>
-                </view>
-                <view class='flex_row'>
-                    <image class='icon' src='/images/star-off.png'></image>
-                    <view>未入店铺</view>
-                </view>
+            <view class='itemBottom flex_row'>
+                <view>{{item.venueName}}</view>
+                <view class='revise' bindtap='onRevise' data-item='{{item}}'>修改</view>
             </view>
         </view>
+
     </view>
 </view>

@@ -32,11 +32,57 @@ Page({
     //领用
     onUse(){
         let packageType = this.data.task.packageType;
+        let token = wx.getStorageSync('token')
+        let isBindMobile =token.bindingMobile;
+        let accessToken = token.accessToken;
+        if(!accessToken){
+            wx.showModal({
+                title: '提示',
+                content: '您还未登录,去登录!',
+                showCancel: false,
+                success: (res) => {
+                    if (res.confirm) {
+                        wx.navigateTo({
+                            url: '/pages/authorize/index',
+                        })
+                    }
+                }
+            })
+            return
+        }
+
+        if (!isBindMobile){
+            wx.showModal({
+                title: '提示',
+                content: '您还未绑定手机,去绑定!',
+                showCancel: false,
+                success: (res) => {
+                    if (res.confirm) {
+                        wx.navigateTo({
+                            url: '/pages/bindMobile/index',
+                        })
+                    }
+                }
+            })
+
+            return;
+        }
+
         //正常领取
         if (packageType == 1) {
-            this._getTask({ packageId: this.data.id});
+            wx.showModal({
+                title: '提示',
+                content: '领用后请至【我的店铺】修改你的分销价格和建立你的分销团队',
+                showCancel:false,
+                success:(res) => {
+                    if (res.confirm) {
+                        this._getTask({ packageId: this.data.id });       
+                    }
+                }
+            })
             
         }
+
         //指定领取
         if (packageType == 2){
             this.setData({
@@ -47,20 +93,27 @@ Page({
 
     },
     onGodetail(e){
-        let item = e.currentTarget.dataset.item;
-        //type 1 馆卡  
+        var item = e.currentTarget.dataset.item;
+        console.log(item);
+        let packageType = this.data.task.packageType;
+        let packageId = this.data.id;
+        let entry = 1;  //任务列表进入详情的标志
+        //type 1 课程  
         if(item.type == 1){
+            let url = '/pages/venueCourse/index?packageId=' + packageId + '&id=' + item.id + '&entry=' + entry + '&type=' + '' + '&venueGoodsId=' + item.venueGoodsId + '&received=' + this.data.task.received + '&packageType=' + packageType; 
             wx.navigateTo({
-                url: '/pages/venueCard/index',
-            })
+                url
+            })           
         }
-        //type 2 课程
+        //type 2 馆卡
         if (item.type == 2) {
+            let url = '/pages/venueCard/index?packageId=' + packageId + '&id=' + item.id + '&entry=' + entry + '&type=' + '' + '&venueGoodsId=' + item.venueGoodsId + '&received=' + this.data.task.received + '&packageType=' + packageType;  
             wx.navigateTo({
-                url: '/pages/venueCourse/index',
-            })
+                url
+            })     
         }
-        console.log(item)
+
+        
     },
     onInput(e){
         let taskCode = e.detail.value.trim();
@@ -81,29 +134,24 @@ Page({
     },
     //领用
     _getTask({ packageId, taskCode = ''}){
-        // let obj = {};
-        // if(typeof id == "number"){
-        //     obj = {
-        //         packageId:id
-        //     }
-        // }
-
-        // if (typeof id == "string") {
-        //     obj = {
-        //         packageId: id,
-        //         taskCode: taskCode
-        //     }
-        // }
-        
+        wx.showLoading();
         indexModel.getTask({
             packageId,
             taskCode
         }).then(res => {
+            wx.hideLoading();
             wx.showToast({
-                title: res.data.msg
+                title: res.data.msg,
+                icon:'none',
+                success: () => {
+                    if (!res.data.success) return;
+                    //领用成功后跳转我的店铺
+                    wx.navigateTo({
+                        url: '/pages/card/shop/index',
+                    })
+                }
             })
-            if (!res.data.success)return;
-            this._getTaskList(this.data.id)
+            //this._getTaskList(this.data.id)
             console.log(res)
         })
     },

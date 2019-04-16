@@ -1,6 +1,7 @@
 {   
-    "navigationBarTitleText":"斤斗云精选",
+    "navigationBarTitleText":"斤粉圈",
     "usingComponents":{
-        "v-chat":"/components/chat/index"
+        "v-chat":"/components/chat/index",
+        "v-search": "/components/search/index"
     }
 }

@@ -1,37 +1,39 @@
 <!--pages/my/cashApply/index.wxml-->
 <view class='containner'>
-    <view class='tip'>历史待结算佣金¥166.61(历史中已完成订单的可结算佣金总和)</view>
+    <view class='tip'>历史待结算佣金¥{{settlement}}(历史中已完成订单的可结算佣金总和)</view>
     <view class='form'>
         <view class='flex_row between'>
             <view class='key'>可提现金额</view>
-            <view class='val'>￥<text class='red'>6900.00</text>元</view>
+            <view class='val'>￥<text class='red'>{{info.withdrawCash || 0}}</text>元</view>
         </view>
         <view class='flex_row between'>
             <view class='key'>本月已提现</view>
-            <view class='val'>￥<text class='red'>6900.00</text>元</view>
+            <view class='val'>￥<text class='red'>{{info.cashAlreadyForMonth}}</text>元</view>
         </view>
         <view class='flex_row between'>
             <view class='key'>提现金额</view>
-            <input placeholder='请输入金额(精确到分)'></input>
+            <input type='number' placeholder='请输入金额(精确到分)' bindblur='onMoney'></input>
         </view>
         <view class='flex_row between'>
             <view class='key'>缴税预估</view>
-            <view class='val'>￥<text class='red'>6900.00</text>元</view>
-        </view>
-        <view class='flex_row between'>
-            <view class='key'>提现手续费</view>
-            <view class='val'>￥<text class='red'>6900.00</text>元</view>
+            <view class='val' wx:if="{{scottare >= 0}}">￥<text class='red'>{{scottare}}</text>元</view>
         </view>
         <view class='flex_row between'>
             <view class='key'>真实姓名</view>
-            <view class='val'>张小龙<text class='blue'>(点击修改)</text></view>
+            <input wx:if="{{nameShow}}" focus='true' value='{{realName }}'  bindinput='onName'></input>
+            <view wx:if="{{!nameShow}}" class='val'>{{realName }}<text class='blue' bindtap='onChangName'>(点击修改)</text></view>
         </view>
         <view class='flex_row between'>
             <view class='key'>微信账号</view>
-            <view class='val'>18736271849</view>
+            <view class='val'>{{info.wechatAccount }}</view>
+        </view>
+
+        <view class='flex_row between'>
+            <view class='key'>银行卡号</view>
+            <view class='val' bindtap='onBank'>{{bankNum}}</view>
         </view>
     </view>
 
-    <view class='btn'>预计3-5个工作日到账，确认提现</view>
+    <view class='btn' bindtap='onSubmit'>预计3-5个工作日到账，确认提现</view>
     <view class='rule blue' bindtap='onRule'>提现规则说明？</view>
 </view>

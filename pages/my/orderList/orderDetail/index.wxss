@@ -1,0 +1,54 @@
+/* pages/team/oderList/oderDetail/index.wxss */
+.font32{
+    font-size: 32rpx;
+}
+.item{
+    background: #fff;
+    padding: 0 30rpx;
+    margin-bottom: 30rpx;
+}
+.item:first-child{
+    margin-top: 30rpx;
+}
+.item .top{
+   padding: 30rpx 0 15rpx 0;
+   border-bottom: 1px solid #DCDCDC;
+}
+
+.img{
+    width: 250rpx;
+    height: 150rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+    background: #999;
+}
+
+.text{
+    width: calc(100% - 280rpx);
+    height: 150rpx;
+    font-size: 24rpx;
+    justify-content: space-between;
+}
+
+.bottom{
+    height: 68rpx;
+    font-size: 28rpx;
+}
+
+.warp{
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+
+.wxName{
+    width: 200rpx;
+}
+
+.linkMan{
+    line-height: 50rpx;
+    padding: 15rpx 0;
+}
+
+.item .colnTop{
+    padding: 15rpx 0;
+}

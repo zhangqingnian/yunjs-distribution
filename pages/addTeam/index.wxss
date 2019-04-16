@@ -1,0 +1,57 @@
+/* pages/addTeam/index.wxss */
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background:rgba(0,0,0,.7);
+    font-size: 30rpx;
+    color: #323232;
+}
+.box{
+    background: #fff;
+    width: 540rpx;
+    border-radius: 30rpx;
+    position: absolute;
+    top:400rpx;
+    left: calc(50% - 270rpx);
+    overflow: hidden;
+
+}
+
+.box .top{
+    justify-content: center;
+    box-sizing: border-box;
+    padding-bottom: 30rpx;
+    border: 1px solid #D4D5D7;
+}
+
+.box .text{
+    margin-top: 40rpx;
+    margin-bottom: 35rpx;
+}
+
+.xieyi{
+    color: #63AFE0;
+    font-size: 24rpx;
+    margin-left: 10rpx;
+}
+.hook{
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.btns{
+    line-height: 80rpx;
+    color: #63AFE0;
+}
+
+.btns view{
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btns view:first-child{
+    border-right: 1px solid #D4D5D7;
+}

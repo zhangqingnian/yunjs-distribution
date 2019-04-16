@@ -1,4 +1,6 @@
 // pages/my/bank/addBank/index.js
+import { MyModel } from '../../../../models/my.js';
+let myModel = new MyModel();
 Page({
 
     /**
@@ -14,53 +16,59 @@ Page({
     onLoad: function (options) {
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
 
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
+    onBankName(e){
+        let bankName = e.detail.value.trim();
+        this.setData({
+            bankName
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
+    onBankNum(e){
+        let bankNum = e.detail.value.trim();
+        this.setData({
+            bankNum
+        })
     },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
+    onRealName(e){
+        let realName = e.detail.value.trim();
+        this.setData({
+            realName
+        })
     },
+    onSubmit(){
+        let { realName, bankName, bankNum } = this.data;
+        if (!realName || !bankName || !bankNum){
+            wx.showToast({
+                title: '请输入有效信息!',
+                icon:'none'
+            })
+            return
+        }
 
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
+        this._addBank(realName, bankName, bankNum)
     },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    _addBank(realName, bankName, bankNum){
+        myModel.addBank({
+            realName,   //真实姓名
+            bankName,   //银行
+            bankNum     //卡号
+        }).then(res => {
+            console.log(res)
+            wx.showToast({
+                title: res.data.msg,
+                success:() => {
+                    if(res.data.success){
+                        wx.navigateBack({
+                            delta:1
+                        })
+                    }
+                }
+            })
+        })
     }
 })

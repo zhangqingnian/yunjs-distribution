@@ -4,40 +4,6 @@ import { QuestModel} from '../../models/quest.js';
 let questModel = new QuestModel();
 
 
-// 检测是否可以调用getUpdateManager检查更新
-
-
-let updateManager = wx.getUpdateManager();
-// 获取全局唯一的版本更新管理器，用于管理小程序更新
-updateManager.onCheckForUpdate(function (res) {
-    if (res.hasUpdate) {
-        //如果有新版本                
-        // 小程序有新版本，会主动触发下载操作        
-        updateManager.onUpdateReady(function () {
-            //当新版本下载完成，会进行回调          
-            wx.showModal({
-                title: '更新提示',
-                content: '新版本已经准备好，单击确定重启小程序',
-                showCancel: false,
-                success: function (res) {
-                    if (res.confirm) {
-                        // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启小程序               
-                        updateManager.applyUpdate();
-                    }
-                }
-            })
-        })
-        // 小程序有新版本，会主动触发下载操作（无需开发者触发）        
-        updateManager.onUpdateFailed(function () {
-            //当新版本下载失败，会进行回调          
-            wx.showModal({
-                title: '提示',
-                content: '检查到有新版本，但下载失败，请稍后尝试',
-                showCancel: false,
-            })
-        })
-    }
-});
 
 
 Page({
@@ -59,6 +25,7 @@ Page({
         wx.checkSession({
             success: () => {
                 // session_key 未过期，并且在本生命周期一直有效
+                console.log(e);
                 let { encryptedData, iv, errMsg } = e.detail;
                 let session_key = wx.getStorageSync('token').session_key
                 if (e.detail.errMsg == 'getPhoneNumber:fail user deny' || e.detail.errMsg == "getPhoneNumber:user deny") {
@@ -127,7 +94,7 @@ Page({
     //发起请求
     _login(code, encryptedData, iv) {
         wx.request({
-            url: config.api_base_url + 'front/miniproWeChatLogin',
+            url: config.api_base_url + 'front/distributionMiniproWeChatLogin',
             header: {
                 'content-type': 'application/x-www-form-urlencoded'
             },
@@ -144,7 +111,6 @@ Page({
                     wx.setStorageSync('token', reslut.data)
                     
                     //是否绑定手机
-                    wx.setStorageSync('isBindMobile', reslut.data.bindingMobile);
                     wx.navigateBack({
                         delta: 2
                     })
